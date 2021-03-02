@@ -20,9 +20,12 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "check-password-strength": "^2.0.2",
     "express": "^4.16.3",
+    "express-session": "^1.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.11.18",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1"
   }
 }
