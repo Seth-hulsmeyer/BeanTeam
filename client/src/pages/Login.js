@@ -1,6 +1,7 @@
 import React from "react";
 
 function Login() {
+  //function goes here
   return (
     <>
       <nav className="navbar navbar-default">
@@ -52,8 +53,6 @@ function Login() {
           <p id="footer-text">Created for practitioners by practitioners</p>
         </div>
       </footer>
-
-      <script type="text/javascript" src="js/login.js"></script>
     </>
   );
 }

@@ -1,10 +1,10 @@
 const express = require("express");
 const session = require("express-session");
 const mongoose = require("mongoose");
-// const routes = require("./routes");
+const routes = require("./routes/api-routes");
 const path = require("path");
 const passport = require("passport");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Define middleware here
@@ -20,13 +20,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 // Define API routes here
-// app.use(routes);
+routes(app);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bean_feeder");
 
 // Send every other request to the React app
 // Define any API routes before this runs
-app.get("*", (req, res) => {
+app.get((req, res) => {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 

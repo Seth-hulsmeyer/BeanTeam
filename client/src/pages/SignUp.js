@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 function SignUp() {
+  //functions go here
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (event) => {
+    setUser(event.target.value);
+    setPassword(event.target.value);
+  };
+
   return (
     <>
       <nav className="navbar navbar-default">
@@ -17,7 +26,7 @@ function SignUp() {
           <div className="col-md-6 col-md-offset-3">
             <h2>Build Healthy Connections</h2>
             <h4>Sign Up below</h4>
-            <form className="signup">
+            <form className="signup" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input
@@ -37,7 +46,7 @@ function SignUp() {
                 />
               </div>
               <div
-                style="display: none"
+                style={{ display: "none" }}
                 id="alert"
                 className="alert alert-danger"
                 role="alert"
@@ -71,8 +80,6 @@ function SignUp() {
           </div>
         </div>
       </div>
-
-      <script type="text/javascript" src="js/signup.js"></script>
     </>
   );
 }

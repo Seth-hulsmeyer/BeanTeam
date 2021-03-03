@@ -1,7 +1,7 @@
-const db = require("../models");
-const passport = require("../config/passport");
-const isAuthenticated = require("../config/middleware/isAuthenticated");
-const passwordStrength = require("check-password-strength");
+const db = require("../client/src/models");
+const passport = require("../client/src/config/passport");
+// const isAuthenticated = require("../client/src/config/middleware/isAuthenticated");
+// const passwordStrength = require("check-password-strength");
 
 module.exports = (app) => {
   app.get("/login", (req, res) => {
