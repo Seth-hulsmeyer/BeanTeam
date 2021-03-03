@@ -170,8 +170,7 @@ const userArray = [
   },
 ];
 
-db.bean_feeder
-  .deleteMany({})
+db.BeanVideo.deleteMany({})
   .then(() =>
     db.BeanVideo.collection.insertMany([
       ...htmlVideoArray,
@@ -181,6 +180,7 @@ db.bean_feeder
       ...userArray,
     ])
   )
+  .then(() => db.BeanUser.collection.insertMany(userArray))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

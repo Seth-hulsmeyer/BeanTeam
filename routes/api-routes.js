@@ -1,5 +1,5 @@
-const db = require("../client/src/models");
-const passport = require("../client/src/config/passport");
+const db = require("../models");
+const passport = require("../config/passport");
 // const isAuthenticated = require("../client/src/config/middleware/isAuthenticated");
 // const passwordStrength = require("check-password-strength");
 

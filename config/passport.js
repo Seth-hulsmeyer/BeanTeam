@@ -9,7 +9,6 @@ passport.use(
       usernameField: "email",
     },
     (email, password, done) => {
-      
       db.User.findOne({
         where: {
           email: email,
@@ -31,11 +30,11 @@ passport.use(
 );
 
 passport.serializeUser((obj, cb) => {
-    cb(null, obj);
+  cb(null, obj);
 });
 
 passport.deserializeUser((obj, cb) => {
-    cb(null, obj);
+  cb(null, obj);
 });
 
 module.exports = passport;
