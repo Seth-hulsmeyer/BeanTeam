@@ -1,7 +1,7 @@
 const express = require("express");
 const session = require("express-session");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+// const routes = require("./routes");
 const path = require("path");
 const passport = require("passport");
 const PORT = process.env.PORT || 3001;
@@ -20,9 +20,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 // Define API routes here
-app.use(routes)
+// app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bean_feeder");
 
 // Send every other request to the React app
 // Define any API routes before this runs
