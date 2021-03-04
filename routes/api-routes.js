@@ -4,43 +4,47 @@ const passport = require("../config/passport");
 // const passwordStrength = require("check-password-strength");
 
 module.exports = (app) => {
-  app.get("/login", (req, res) => {
-    res.render("login");
-  });
+  // APP.GET to view a route won't work, res.render is a handlebar functionality
+
+  // app.get("/login", (req, res) => {
+  //   res.render("login");
+  // });
+
   //Post to verify user is in user table
-  app.post("/login", (req, res, next) => {
+  // api/ for us to know it's private from the user. They do not see this route
+  app.post("/api/login", (req, res, next) => {
     passport.authenticate("local", (err, user, info) => {
-      if (!user) res.render("login", { error: info.message });
+      if (!user) res.redirect("/login", { error: info.message });
       else {
         req.logIn(user, (err) => {
           //If present returns to home page or displays errors
           if (err) {
             return next(err);
           }
-          return res.redirect("/home");
+          return res.redirect("/main");
         });
       }
     })(req, res, next);
   });
-  //Get for signup page
-  app.get("/signup", (req, res) => {
-    res.render("signup");
-  });
+  //Get for signup page = DONT NEED, THIS IS SET THROUGH REACT-ROUTER-DOM
+  // app.get("/signup", (req, res) => {
+  //   res.render("signup");
+  // });
   //Post to signup that add user info to users table
-  app.post("/signup", (req, res) => {
-    db.User.create({
+  app.post("/api/signup", (req, res) => {
+    db.BeanUser.create({
       email: req.body.email,
       password: req.body.password,
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
+      first_name: req.body.firstName,
+      last_name: req.body.lastName,
     })
-      .then(() => {
+      .then((data) => {
         //Redirects to login
-        res.redirect("/login");
+        res.status(200).json(data);
       })
       .catch((err) => {
         //If failure renders signup page with error message
-        res.render("signup", { error: "Unable to sign up, try again" });
+        // res.render("signup", { error: "Unable to sign up, try again" });
       });
   });
 };
