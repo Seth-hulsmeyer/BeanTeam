@@ -1,13 +1,3 @@
-let mongoose = require("mongoose");
-let db = require("../models");
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bean_feeder", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-  useUnifiedTopology: true,
-});
-
 // HTML - EJ Media
 const htmlVideoArray = [
   {
@@ -170,27 +160,7 @@ const userArray = [
   },
 ];
 
-db.BeanVideo.deleteMany({})
-  .then(() =>
-    db.BeanVideo.collection.insertMany([
-      ...htmlVideoArray,
-      ...cssVideoArray,
-      ...JsVideoArray,
-      ...ReactVideoArray,
-      ...userArray,
-    ])
-  )
-  .then(() => db.BeanUser.collection.insertMany(userArray))
-  .then((data) => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
-
-module.exports = {
+export default {
   JsVideoArray,
   cssVideoArray,
   htmlVideoArray,

@@ -8,6 +8,7 @@ import cssLogo from "../images/512-CSS3_logo_and_wordmark.png";
 function getVideo() {
   console.log("meow");
 }
+// put in functionality to populate videos associated with user
 
 function VideoButton({ category, title, videoUrl }) {
   return (
