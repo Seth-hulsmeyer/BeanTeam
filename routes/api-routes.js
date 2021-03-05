@@ -37,6 +37,7 @@ module.exports = (app) => {
       password: req.body.password,
       first_name: req.body.firstName,
       last_name: req.body.lastName,
+      videos: req.body.videos,
     })
       .then((data) => {
         //Redirects to login
