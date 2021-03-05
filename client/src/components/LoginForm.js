@@ -9,6 +9,8 @@ const LoginForm = () => (
           <Form.Input label="Email" type="email" placeholder="Email" />
           <Form.Input label="Password" type="password" placeholder="Password" />
           <Button type="submit" onClick="#">
+            {" "}
+            {/* something weird about the onClick here, error about requiring a string */}
             Login
           </Button>
         </Segment>
