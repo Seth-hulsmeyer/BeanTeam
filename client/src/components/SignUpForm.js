@@ -38,44 +38,57 @@ const SignUpForm = (props) => (
             onChange={props.handleInputChange}
             placeholder="Password"
           />
-          <Checkbox
-            toggle
-            label="JS"
-            name="videos"
-            value="JS"
-            onChange={() => {
-              props.handleToggle("JS", !props.formObject.JS);
-            }}
-          />
-          {/* onChange.something */}
-          <Checkbox
-            toggle
-            label="React"
-            name="videos"
-            value="React"
-            onChange={() => {
-              props.handleToggle("React", !props.formObject.React);
-            }}
-          />
-          <Checkbox
-            toggle
-            label="HTML"
-            name="videos"
-            value="HTML"
-            onChange={() => {
-              props.handleToggle("HTML", !props.formObject.HTML);
-            }}
-          />
-          <Checkbox
-            toggle
-            label="CSS"
-            name="videos"
-            value="CSS"
-            onChange={() => {
-              props.handleToggle("CSS", !props.formObject.CSS);
-            }}
-          />
-          <Button type="submit">Submit</Button>
+          <Grid.Row>
+            <Grid.Column>
+              <Checkbox
+                style={{ margin: "2vw" }}
+                toggle
+                label="JS"
+                name="videos"
+                value="JS"
+                onChange={() => {
+                  props.handleToggle("JS", !props.formObject.JS);
+                }}
+              />
+              <Checkbox
+                toggle
+                label="React"
+                name="videos"
+                value="React"
+                onChange={() => {
+                  props.handleToggle("React", !props.formObject.React);
+                }}
+              />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              <Checkbox
+                style={{ margin: "2vw" }}
+                toggle
+                label="HTML"
+                name="videos"
+                value="HTML"
+                onChange={() => {
+                  props.handleToggle("HTML", !props.formObject.HTML);
+                }}
+              />
+              <Checkbox
+                toggle
+                label="CSS"
+                name="videos"
+                value="CSS"
+                onChange={() => {
+                  props.handleToggle("CSS", !props.formObject.CSS);
+                }}
+              />
+              <br></br>
+            </Grid.Column>
+          </Grid.Row>
+          <br></br>
+          <Button type="submit" onClick={props.handleSubmit}>
+            Submit
+          </Button>
           <p>
             Or log in <a href="/login">here</a>
           </p>

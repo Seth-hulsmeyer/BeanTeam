@@ -19,6 +19,21 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* .javascript {
+  height: 5%;
+  width: 5%;
+} */
+
+.languageImage {
+  width: 15vw;
+  height: 10vw;
+  margin-left: 5vw;
 }
