@@ -30,6 +30,9 @@ const NavBar = () => (
           //   onClick={}
         />
       </Menu>
+      <div class="row">
+    {/* <h4 class="center-align">Welcome {props.formObject.firstName} {props.formObject.lastName}, time to work!</h4> */}
+</div>
     </Header>
   </>
 );
