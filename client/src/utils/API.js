@@ -4,6 +4,9 @@ export default {
   createUser: function (formObject) {
     return axios.post("/api/signup", formObject);
   },
+  getUsers: function () {
+    return axios.get("/api/users/:id");
+  },
   // Gets user videos
   getVideos: function () {
     return axios.get("/api/video");
