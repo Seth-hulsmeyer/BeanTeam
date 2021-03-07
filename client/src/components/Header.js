@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Header } from "semantic-ui-react";
+import { Menu, Header, Grid } from "semantic-ui-react";
 // import { Link } from "react-router-dom";
 // import FYBlogo from "../images/FeedYourBean_Blue.png";
 
@@ -30,9 +30,9 @@ const NavBar = () => (
           //   onClick={}
         />
       </Menu>
-      <div class="row">
-    {/* <h4 class="center-align">Welcome {props.formObject.firstName} {props.formObject.lastName}, time to work!</h4> */}
-</div>
+      <Grid.Row>
+        {/* <h4 class="center-align">Welcome {props.formObject.firstName} {props.formObject.lastName}, time to work!</h4> */}
+      </Grid.Row>
     </Header>
   </>
 );

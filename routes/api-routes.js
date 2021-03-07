@@ -49,31 +49,21 @@ module.exports = (app) => {
       });
   });
 
-
-  app.get("/api/users/:_id", (req, res) => {
+  app.get("/api/users/:id", (req, res) => {
     db.BeanUser.findOne({
-      where: {_id: req.params._id},
+      first_name: "Sam",
+      // where: { _id: req.params.id },
       // email: req.body.email,
       // password: req.body.password,
       // first_name: req.body.firstName,
       // last_name: req.body.lastName,
       // videos: req.body.videos,
     })
-    .then((data) => {
-      res.status(200).json(data);
-    })
-    .catch((err) => {
-      return err;
-    })
-  })
-
-
-
-
-
-
-
-
-
-
+      .then((data) => {
+        res.status(200).json(data);
+      })
+      .catch((err) => {
+        return err;
+      });
+  });
 };

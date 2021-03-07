@@ -31,32 +31,32 @@ const cssVideoArray = [
   {
     category: "CSS",
     title: "Changing font type, color and size",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=UO0ZPL8yMpU&list=PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C&index=2",
   },
   {
     category: "CSS",
     title: "Multiple Selectors and writing rule for more than one element",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=JT0gyzbpD2U&list=PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C&index=3",
   },
 
   {
     category: "CSS",
     title: "Add a line to header and border property",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=hCoMjvtsyPA&list=PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C&index=4",
   },
   {
     category: "CSS",
     title: "Inheritance and overriding",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=Bj2ZCfDPP2A&list=PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C&index=5",
   },
   {
     category: "CSS",
     title: "Using Classes in CSS",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=u4dLB9NP3IA&list=PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C&index=6",
   },
 ];
@@ -66,28 +66,28 @@ const JsVideoArray = [
   {
     category: "JS",
     title: "Statements",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=tkw8QXIcmU4&list=PLr6-GrHUlVf96NLj3PQq-tmEB6woZjwEl&index=2",
   },
 
   {
     category: "JS",
     title: "Variables",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=IhKWfiNCoSY&list=PLr6-GrHUlVf96NLj3PQq-tmEB6woZjwEl&index=3",
   },
 
   {
     category: "JS",
     title: "Variables 2",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=UR71iavwMkE&list=PLr6-GrHUlVf96NLj3PQq-tmEB6woZjwEl&index=4",
   },
 
   {
     category: "JS",
     title: "Using an external File",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=r--dRuIiV7A&list=PLr6-GrHUlVf96NLj3PQq-tmEB6woZjwEl&index=5",
   },
 ];
@@ -97,66 +97,35 @@ const ReactVideoArray = [
   {
     category: "React",
     title: "What is React?",
-    link: "https://www.youtube.com/watch?v=JPT3bFIwJYA",
+    videoUrl: "https://www.youtube.com/watch?v=JPT3bFIwJYA",
   },
 
   {
     category: "React",
     title: "Set up Workspace with Webpack",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=uextYhQGP6k&list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS&index=2",
   },
 
   {
     category: "React",
     title: "Set up Git",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=LEu7FxUUr90&list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS&index=3",
   },
 
   {
     category: "React",
     title: "First Component",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=G40iHC-h0c0&list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS&index=4",
   },
 
   {
     category: "React",
     title: "Multiple Components",
-    link:
+    videoUrl:
       "https://www.youtube.com/watch?v=9wK4gHoOh1g&list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS&index=5",
-  },
-];
-
-const userArray = [
-  {
-    first_name: "Seth",
-    last_name: "Hulsmeyer",
-    email: "seth.hulsmeyer@hotmail.com",
-    password: "Bean123!",
-    videos: [],
-  },
-  {
-    first_name: "Seth",
-    last_name: "Klusmire",
-    email: "sethklusmire@gmail.com",
-    password: "Bean123!",
-    videos: [],
-  },
-  {
-    first_name: "Sam",
-    last_name: "Fan",
-    email: "samisfan@msn.com",
-    password: "Bean123!",
-    videos: [],
-  },
-  {
-    first_name: "Sam",
-    last_name: "Peloquin",
-    email: "speloqu24@gmail.com",
-    password: "Bean123!",
-    videos: [],
   },
 ];
 
