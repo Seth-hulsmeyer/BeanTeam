@@ -9,16 +9,16 @@ passport.use(
       usernameField: "email",
     },
     (email, password, done) => {
-      db.User.findOne({
-        where: {
+      db.BeanUser.findOne({
+        
           email: email,
-        },
+        
       }).then((dbUser) => {
         if (!dbUser) {
           return done(null, false, {
             message: "Wrong email.",
           });
-        } else if (!dbUser.validPassword(password)) {
+        } else if (dbUser.password !== password) {
           return done(null, false, {
             message: "Wrong password.",
           });

@@ -4,6 +4,10 @@ import UserContext from "../utils/UserContext";
 
 function VideoForm() {
   const user = useContext(UserContext);
+  if (!user) {
+    return null;
+  }
+  // If the page uses user, the above code needs to be added
 
   return (
     <div>

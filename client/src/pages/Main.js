@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { Container } from "semantic-ui-react";
 import NavBar from "../components/Header";
 import VideoButton from "../components/VideoButton";
-import VideoList from "../pages/VideoList";
+import VideoForm from "../components/VideoForm";
+import UserContext from "../utils/UserContext";
+import { useHistory } from "react-router-dom";
+
 
 function Main() {
-  // UseEffect to call the backend. Get user info based off of ID
+
+  const user = useContext(UserContext);
+  
+  const history = useHistory();
+
+  useEffect(() => {
+    if(!user) {
+      history.replace("/")
+    }
+  }, [user, history])
+
+  if (!user) {
+    return null;
+  }
   return (
     <>
       <NavBar />
       <Container>
         <VideoButton />
-        <VideoList />
+        <VideoForm />
       </Container>
     </>
   );

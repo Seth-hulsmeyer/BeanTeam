@@ -1,17 +1,5 @@
 import React from "react";
 
-const UserContext = React.createContext({
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  videos: [
-    {
-      category: "",
-      title: "",
-      videoUrl: "",
-    },
-  ],
-});
+const UserContext = createContext();
 
 export default UserContext;
