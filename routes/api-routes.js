@@ -46,10 +46,8 @@ module.exports = (app) => {
   });
 
   app.get("/api/users/current", isAuthenticated, (req, res) => {
-    
-      db.BeanUser.findOne({
+    db.BeanUser.findOne({
       email: req.user.email,
-      
     })
       .then((data) => {
         res.status(200).json(data);
@@ -57,10 +55,7 @@ module.exports = (app) => {
       .catch((err) => {
         return err;
       });
-    
-    
   });
-
 
   app.post("/api/checkpassword", (req, res) => {
     if (req.body.password === "") {
