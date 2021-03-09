@@ -1,9 +1,9 @@
 import React from "react";
 import { Grid, Image, Button } from "semantic-ui-react";
-import jsLogo from "../images/jS_logo.png";
-import reactLogo from "../images/React_logo.png";
-import htmlLogo from "../images/HTML5_Logo.png";
-import cssLogo from "../images/CSS3_logo.png";
+import jsLogo from "../images/512px-Javascript-icon.png";
+import reactLogo from "../images/512px-React-icon.png";
+import htmlLogo from "../images/512px-HTML5-icon.png";
+import cssLogo from "../images/512px-CSS3-icon.png";
 
 function getVideo() {
   console.log("meow");
