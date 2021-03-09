@@ -1,7 +1,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
-// const isAuthenticated = require("../client/src/config/middleware/isAuthenticated");
-// const passwordStrength = require("check-password-strength");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
+const passwordStrength = require("check-password-strength");
 
 module.exports = (app) => {
   // APP.GET to view a route won't work, res.render is a handlebar functionality
@@ -12,7 +12,7 @@ module.exports = (app) => {
 
   //Post to verify user is in user table
   // api/ for us to know it's private from the user. They do not see this route
-  app.post("/api/login", (req, res, next) => {
+  app.post("/login", (req, res, next) => {
     passport.authenticate("local", (err, user, info) => {
       if (!user) res.redirect("/login", { error: info.message });
       else {
@@ -26,10 +26,6 @@ module.exports = (app) => {
       }
     })(req, res, next);
   });
-  //Get for signup page = DONT NEED, THIS IS SET THROUGH REACT-ROUTER-DOM
-  // app.get("/signup", (req, res) => {
-  //   res.render("signup");
-  // });
   //Post to signup that add user info to users table
   app.post("/api/signup", (req, res) => {
     db.BeanUser.create({
@@ -49,15 +45,11 @@ module.exports = (app) => {
       });
   });
 
-  app.get("/api/users/:id", (req, res) => {
-    db.BeanUser.findOne({
-      first_name: "Sam",
-      // where: { _id: req.params.id },
-      // email: req.body.email,
-      // password: req.body.password,
-      // first_name: req.body.firstName,
-      // last_name: req.body.lastName,
-      // videos: req.body.videos,
+  app.get("/api/users/current", isAuthenticated, (req, res) => {
+    
+      db.BeanUser.findOne({
+      email: req.user.email,
+      
     })
       .then((data) => {
         res.status(200).json(data);
@@ -65,5 +57,25 @@ module.exports = (app) => {
       .catch((err) => {
         return err;
       });
+    
+    
+  });
+
+
+  app.post("/api/checkpassword", (req, res) => {
+    if (req.body.password === "") {
+      res.json({
+        strength: "Weak",
+      });
+    } else {
+      res.json({
+        strength: passwordStrength(req.body.password).value,
+      });
+    }
+  });
+
+  app.post("/logout", function (req, res) {
+    req.logout();
+    res.redirect("/");
   });
 };

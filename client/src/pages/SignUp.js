@@ -41,7 +41,7 @@ function SignUp() {
     API.createUser(formObject).then((res) => {
       console.log(res);
       if (res.statusText === "OK") {
-        history.push("/main");
+        history.push("/login");
       }
     });
   };
@@ -65,6 +65,26 @@ function SignUp() {
       ...formObject,
       [name]: value,
     });
+    
+    // if (name === 'password') {
+
+    //   fetch("/api/checkpassword", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       password: value,
+    //     }),
+    //   }).then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     passwordStrength.textContent = data.strength
+    //   })
+    // }
+
+    
     // console.log(formObject);
   };
   return (

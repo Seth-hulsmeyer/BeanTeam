@@ -9,15 +9,22 @@ import UserContext from "./utils/UserContext";
 import { set } from "mongoose";
 
 function App() {
-  const [users, setUsers] = useState("");
+  const [user, setUser] = useState();
+
+  const [isFetchingUser, setIsFetchingUser] = useState(true);
+
+
+
 
   useEffect(() => {
-    API.getUsers()
+    API.getCurrentUser()
       .then((res) => {
-        setUsers(res.data);
+        setUser(res.data);
+        setIsFetchingUser(false)
         console.log(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) =>  {console.log(err)
+      setIsFetchingUser(false)});
   }, []);
 
   return (
@@ -25,8 +32,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={SignUp} />
         <Route exact path="/login" component={Login} />
-        <UserContext.Provider value={users}>
-          <Route exact path="/main" component={Main} />
+        <UserContext.Provider value={user}>
+        {isFetchingUser ? null : <Route exact path="/main" component={Main} /> }
         </UserContext.Provider>
       </Switch>
     </Router>
