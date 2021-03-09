@@ -5,8 +5,8 @@ import UserContext from "../utils/UserContext";
 
 function VideoForm() {
   const location = useLocation();
-
   const user = useContext(UserContext);
+
   console.log(user);
   if (!user) {
     return null;
