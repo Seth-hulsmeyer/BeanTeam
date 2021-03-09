@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Header, Grid } from "semantic-ui-react";
+import { Menu, Header, Grid, Button } from "semantic-ui-react";
 // import { Link } from "react-router-dom";
 // import FYBlogo from "../images/FeedYourBean_Blue.png";
 
@@ -16,13 +16,9 @@ const NavBar = () => (
             // style={{ marginRight: "1.5em" }}
           />
         </Menu.Item>
-        <Menu.Item
-          className="navItem"
-          name="Logout"
-          href="/login"
-          //   active={activeItem === "Home"}
-          //   onClick={}
-        />
+        <Menu.Item className="navItem" action="logout" method="post" as="form">
+          <Button type="submit">Logout</Button>
+        </Menu.Item>
         <Menu.Item
           className="navItem"
           name="My Videos"
