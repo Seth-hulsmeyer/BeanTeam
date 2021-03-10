@@ -16,6 +16,7 @@ function NavBar() {
               // src={FYBlogo}+
               className="fyblue"
               size="large"
+              alt=""
               // src={FYBlogo}
               // style={{ marginRight: "1.5em" }}
             />

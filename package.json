@@ -7,8 +7,8 @@
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"npm run server\" \"npm run client\"",
-"server": "nodemon --ignore ./client/ ./server.js",
-"client": "npm run start --prefix ./client",
+    "server": "nodemon --ignore ./client/ ./server.js",
+    "client": "npm run start --prefix ./client",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
     "seed": "node seed/seedDB.js"
@@ -31,6 +31,7 @@
     "passport-local": "^1.0.0",
     "react-router-dom": "^5.2.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.3"
+    "semantic-ui-react": "^2.0.3",
+    "video.js": "^7.11.4"
   }
 }

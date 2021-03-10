@@ -6,18 +6,15 @@ import VideoForm from "../components/VideoForm";
 import UserContext from "../utils/UserContext";
 import { useHistory } from "react-router-dom";
 
-
 function Main() {
-
   const user = useContext(UserContext);
-  
   const history = useHistory();
 
   useEffect(() => {
-    if(!user) {
-      history.replace("/")
+    if (!user) {
+      history.replace("/");
     }
-  }, [user, history])
+  }, [user, history]);
 
   if (!user) {
     return null;

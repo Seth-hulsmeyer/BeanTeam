@@ -34,14 +34,13 @@
 
 .languageImage {
   width: auto;
-  height: 10vw;
+  height: 5vw;
   margin-left: 5vw;
   margin-top: 1vw;
 }
 
-.logoImage {
-  width: auto;
-  height: 10vw;
-  margin-left: 5vw;
-  margin-top: 1vw;
+Button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
