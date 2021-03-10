@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./pages/Main";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
+import VideoDisplay from "./pages/VideoDisplay";
 import "./App.css";
 import API from "./utils/API";
 import UserContext from "./utils/UserContext";
@@ -34,6 +35,15 @@ function App() {
           {isFetchingUser ? null : (
             <Route exact path="/main" component={Main} />
           )}
+<<<<<<< HEAD
+=======
+          {isFetchingUser ? null : (
+            <Route exact path="/videos/:id" component={VideoDisplay} />
+          )}
+          {isFetchingUser ? null : (
+            <Route exact path="/videos" component={VideoDisplay} />
+          )}
+>>>>>>> 09ae55e58f9aca2e6df7ed0f23e5facd785c03ac
         </UserContext.Provider>
       </Switch>
     </Router>

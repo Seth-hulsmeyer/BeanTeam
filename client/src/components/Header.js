@@ -35,9 +35,9 @@ function NavBar() {
           active={activeItem === "Home"}
           onClick={} */}
             <Link
-              to="/Videos"
+              to="/videos"
               className={
-                location.pathname === "/Videos" ? "nav-link active" : "nav-link"
+                location.pathname === "/videos" ? "nav-link active" : "nav-link"
               }
             >
               My Videos

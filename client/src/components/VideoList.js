@@ -1,28 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 // import { Container, Card, Grid } from "semantic-ui-react";
 import UserContext from "../utils/UserContext";
 
-function VideoForm() {
+function VideoList() {
   const location = useLocation();
-  const user = useContext(UserContext);
-<<<<<<< HEAD
 
-  console.log(user);
-  if (!user) {
-    return null;
-  }
-=======
-  // console.log(user);
-  // if (!user) {
-  //   return null;
-  // }
->>>>>>> 09ae55e58f9aca2e6df7ed0f23e5facd785c03ac
-  // If the page uses user, the above code needs to be added
+  const user = useContext(UserContext);
+
+  const [video, currentVideo] = useState();
+
+  const setCurrentVideo = (event) => {
+    currentVideo(event.currentTarget.id);
+    console.log(video);
+  };
+
+  useEffect(() => {
+    console.log(video);
+  }, [currentVideo]);
+
+  console.log(currentVideo);
 
   return (
     <>
-      <h1>Hello {user.first_name}!</h1>
       <div className="card">
         <div className="content">
           <ul>
@@ -48,4 +48,4 @@ function VideoForm() {
   );
 }
 
-export default VideoForm;
+export default VideoList;
