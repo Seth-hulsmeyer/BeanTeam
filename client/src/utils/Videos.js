@@ -3,26 +3,22 @@ const htmlVideoArray = [
   {
     category: "HTML",
     title: "Creating the first webpage",
-    videoUrl:
-      "https://www.youtube.com/watch?v=-USAeFpVf_A&list=PLr6-GrHUlVf_ZNmuQSXdS197Oyr1L9sPB&index=2",
+    videoUrl: "-USAeFpVf_A",
   },
   {
     category: "HTML",
     title: "Line Breaks, Spacing and Comments",
-    videoUrl:
-      "https://www.youtube.com/watch?v=i3GE-toQg-o&list=PLr6-GrHUlVf_ZNmuQSXdS197Oyr1L9sPB&index=3",
+    videoUrl: "i3GE-toQg-o",
   },
   {
     category: "HTML",
     title: "Ordered and Unordered lists",
-    videoUrl:
-      "https://www.youtube.com/watch?v=09oErCBjVns&list=PLr6-GrHUlVf_ZNmuQSXdS197Oyr1L9sPB&index=4",
+    videoUrl: "09oErCBjVns",
   },
   {
     category: "HTML",
     title: "Creating a table",
-    videoUrl:
-      "https://www.youtube.com/watch?v=wvR40su_XBM&list=PLr6-GrHUlVf_ZNmuQSXdS197Oyr1L9sPB&index=5",
+    videoUrl: "wvR40su_XBM",
   },
 ];
 
@@ -31,33 +27,28 @@ const cssVideoArray = [
   {
     category: "CSS",
     title: "Changing font type, color and size",
-    videoUrl:
-      "https://www.youtube.com/watch?v=UO0ZPL8yMpU&list=PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C&index=2",
+    videoUrl: "UO0ZPL8yMpU",
   },
   {
     category: "CSS",
     title: "Multiple Selectors and writing rule for more than one element",
-    videoUrl:
-      "https://www.youtube.com/watch?v=JT0gyzbpD2U&list=PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C&index=3",
+    videoUrl: "JT0gyzbpD2U",
   },
 
   {
     category: "CSS",
     title: "Add a line to header and border property",
-    videoUrl:
-      "https://www.youtube.com/watch?v=hCoMjvtsyPA&list=PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C&index=4",
+    videoUrl: "hCoMjvtsyPA",
   },
   {
     category: "CSS",
     title: "Inheritance and overriding",
-    videoUrl:
-      "https://www.youtube.com/watch?v=Bj2ZCfDPP2A&list=PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C&index=5",
+    videoUrl: "Bj2ZCfDPP2A",
   },
   {
     category: "CSS",
     title: "Using Classes in CSS",
-    videoUrl:
-      "https://www.youtube.com/watch?v=u4dLB9NP3IA&list=PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C&index=6",
+    videoUrl: "u4dLB9NP3IA",
   },
 ];
 
@@ -66,29 +57,25 @@ const JsVideoArray = [
   {
     category: "JS",
     title: "Statements",
-    videoUrl:
-      "https://www.youtube.com/watch?v=tkw8QXIcmU4&list=PLr6-GrHUlVf96NLj3PQq-tmEB6woZjwEl&index=2",
+    videoUrl: "tkw8QXIcmU4",
   },
 
   {
     category: "JS",
     title: "Variables",
-    videoUrl:
-      "https://www.youtube.com/watch?v=IhKWfiNCoSY&list=PLr6-GrHUlVf96NLj3PQq-tmEB6woZjwEl&index=3",
+    videoUrl: "IhKWfiNCoSY",
   },
 
   {
     category: "JS",
     title: "Variables 2",
-    videoUrl:
-      "https://www.youtube.com/watch?v=UR71iavwMkE&list=PLr6-GrHUlVf96NLj3PQq-tmEB6woZjwEl&index=4",
+    videoUrl: "UR71iavwMkE",
   },
 
   {
     category: "JS",
     title: "Using an external File",
-    videoUrl:
-      "https://www.youtube.com/watch?v=r--dRuIiV7A&list=PLr6-GrHUlVf96NLj3PQq-tmEB6woZjwEl&index=5",
+    videoUrl: "r--dRuIiV7A",
   },
 ];
 
@@ -97,35 +84,31 @@ const ReactVideoArray = [
   {
     category: "React",
     title: "What is React?",
-    videoUrl: "https://www.youtube.com/watch?v=JPT3bFIwJYA",
+    videoUrl: "JPT3bFIwJYA",
   },
 
   {
     category: "React",
     title: "Set up Workspace with Webpack",
-    videoUrl:
-      "https://www.youtube.com/watch?v=uextYhQGP6k&list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS&index=2",
+    videoUrl: "uextYhQGP6k",
   },
 
   {
     category: "React",
     title: "Set up Git",
-    videoUrl:
-      "https://www.youtube.com/watch?v=LEu7FxUUr90&list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS&index=3",
+    videoUrl: "LEu7FxUUr90",
   },
 
   {
     category: "React",
     title: "First Component",
-    videoUrl:
-      "https://www.youtube.com/watch?v=G40iHC-h0c0&list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS&index=4",
+    videoUrl: "G40iHC-h0c0",
   },
 
   {
     category: "React",
     title: "Multiple Components",
-    videoUrl:
-      "https://www.youtube.com/watch?v=9wK4gHoOh1g&list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS&index=5",
+    videoUrl: "9wK4gHoOh1g",
   },
 ];
 
