@@ -1,23 +1,28 @@
-import React from "react";
-import { Grid, Image, Button } from "semantic-ui-react";
+// Main Page Video Button
+
+import React, { useContext } from "react";
+import { Grid, Checkbox, Image, Button, Form } from "semantic-ui-react";
+import UserContext from "../utils/UserContext";
 import jsLogo from "../images/512px-Javascript-icon.png";
 import reactLogo from "../images/512px-React-icon.png";
 import htmlLogo from "../images/512px-HTML5-icon.png";
 import cssLogo from "../images/512px-CSS3-icon.png";
 
-function getVideo() {
-  console.log("meow");
-}
-// put in functionality to populate videos associated with user
-
-function VideoButton({ category, title, videoUrl }) {
+function VideoButton(props) {
+  const user = useContext(UserContext);
+  console.log(user);
   return (
-    <Grid columns={3} style={{ margin: "2vw" }}>
+    <Grid className="videoButtonCard" columns={4} style={{ margin: "2vw" }}>
       <Grid.Row>
-        <Grid.Column className="ui card">
+        <Grid.Column
+          mobile={16}
+          tablet={8}
+          computer={4}
+          className="ui card vbCard"
+        >
           <img src={jsLogo} className="languageImage" />
           <div class="content">
-            <a class="header">JavaScript</a>
+            <a class="header">JavaScript (1995)</a>
             <div class="meta">
               <span class="date">Created in 1995</span>
             </div>
@@ -26,10 +31,19 @@ function VideoButton({ category, title, videoUrl }) {
               functional, and imperative programming styles.
             </div>
             <br></br>
-            <button>JS Videos</button>
+            <Checkbox
+              toggle
+              defaultChecked={props.topicsData.JS}
+              label="Add JS"
+              name="videos"
+              value="JS"
+              onChange={() => {
+                props.handleToggle("JS", !props.topicsData.JS);
+              }}
+            />
           </div>
         </Grid.Column>
-        <Grid.Column className="ui card">
+        <Grid.Column mobile={16} tablet={8} computer={4} className="ui card">
           <img src={reactLogo} className="languageImage" />
           <div class="content">
             <a class="header">REACT</a>
@@ -38,21 +52,23 @@ function VideoButton({ category, title, videoUrl }) {
             </div>
             <div class="description">
               React is only concerned with state management and rendering that
-              state to the DOM.
+              state to the DOM. New age coding if you will!
             </div>
             <br></br>
-            <button>React Videos</button>
+            <Checkbox
+              toggle
+              defaultChecked={props.topicsData.React}
+              label="Add React"
+              name="videos"
+              value="React"
+              onChange={() => {
+                props.handleToggle("React", !props.topicsData.React);
+              }}
+            />
           </div>
         </Grid.Column>
-      </Grid.Row>
-
-      <Grid.Row>
-        <Grid.Column className="ui card">
-          <img
-            className="languageImage"
-            src={cssLogo}
-            // style={{ width: "auto", height: "auto" }}
-          />
+        <Grid.Column mobile={16} tablet={8} computer={4} className="ui card">
+          <img className="languageImage" src={cssLogo} />
           <div class="content">
             <a class="header">CSS</a>
             <div class="meta">
@@ -60,13 +76,22 @@ function VideoButton({ category, title, videoUrl }) {
             </div>
             <div class="description">
               Style sheet language used for describing the presentation of a
-              document.
+              document. Primary works with HTML.
             </div>
             <br></br>
-            <button>CSS Videos</button>
+            <Checkbox
+              toggle
+              defaultChecked={props.topicsData.CSS}
+              label="Add CSS"
+              name="videos"
+              value="CSS"
+              onChange={() => {
+                props.handleToggle("CSS", !props.topicsData.CSS);
+              }}
+            />
           </div>
         </Grid.Column>
-        <Grid.Column className="ui card">
+        <Grid.Column mobile={16} tablet={8} computer={4} className="ui card">
           <img
             className="languageImage"
             src={htmlLogo}
@@ -78,34 +103,24 @@ function VideoButton({ category, title, videoUrl }) {
               <span class="date">Created in 1993</span>
             </div>
             <div class="description">
-              The standard markup language for documents designed to be
-              displayed in a web browser.
+              Standard markup language for documents designed to be displayed in
+              a browser.
             </div>
             <br></br>
-            <button>HTML Videos</button>
+            <Checkbox
+              toggle
+              defaultChecked={props.topicsData.HTML}
+              label="HTML"
+              name="videos"
+              value="HTML"
+              onChange={() => {
+                props.handleToggle("HTML", !props.topicsData.HTML);
+              }}
+            />
           </div>
         </Grid.Column>
       </Grid.Row>
     </Grid>
-    // <Grid columns={2}>
-    //   <Grid.Row>
-    //     <div class="ui card">
-    //       <div class="image">
-    //         <img src={jsLogo} />
-    //       </div>
-    //       <div class="content">
-    //         <a class="header">JavaScript</a>
-    //         <div class="meta">
-    //           <span class="date">Created in 1995</span>
-    //         </div>
-    //         <div class="description">
-    //           As a multi-paradigm language that supports event-driven,
-    //           functional, and imperative programming styles.
-    //         </div>
-    //         <br></br>
-    //         <button>Videos</button>
-    //       </div>
-    //     </div>
   );
 }
 

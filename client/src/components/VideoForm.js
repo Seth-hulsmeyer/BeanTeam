@@ -1,6 +1,7 @@
+// Main page display of video list
+
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-// import { Container, Card, Grid } from "semantic-ui-react";
 import UserContext from "../utils/UserContext";
 
 function VideoForm() {
@@ -8,9 +9,9 @@ function VideoForm() {
 
   const user = useContext(UserContext);
   // console.log(user);
-  // if (!user) {
-  //   return null;
-  // }
+  if (!user) {
+    return null;
+  }
   // If the page uses user, the above code needs to be added
 
   return (

@@ -13,6 +13,9 @@ export default {
   },
   // Deletes the video with the given id
   deleteVideo: function (id) {
-    return axios.delete("/api/video/" + id);
+    return axios.delete("/api/delete-video/" + id);
+  },
+  addVideo: function (newTopicsData) {
+    return axios.put("/api/add-video", newTopicsData);
   },
 };

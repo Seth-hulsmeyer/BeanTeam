@@ -34,7 +34,23 @@
 
 .languageImage {
   width: auto;
-  height: 10vw;
-  margin-left: 5vw;
+  height: 5vw;
+  margin-left: 7vw;
   margin-top: 1vw;
 }
+
+.navHeader {
+  margin-bottom: 2vw;
+}
+
+.vDisplay {
+  margin-top: 1vw;
+}
+
+/* .vListContainer {
+  background-color: aqua;
+  margin-top: 2cw;
+} */
+/* 
+@media only screen and (max-width: 600px) {
+  */

@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import SignUpForm from "../components/SignUpForm";
 import API from "../utils/API";
-import Videos from "../utils/Videos"; //dumb, react can't destructure on import
+import Videos from "../utils/Videos";
 
 function SignUp() {
   // forcing a url change 2/8/25
   const history = useHistory();
-  //functions go here
-  //
+
   const [formObject, setFormObject] = useState({
     firstName: "",
     lastName: "",
@@ -65,7 +64,7 @@ function SignUp() {
       ...formObject,
       [name]: value,
     });
-    
+
     // if (name === 'password') {
 
     //   fetch("/api/checkpassword", {
@@ -84,7 +83,6 @@ function SignUp() {
     //   })
     // }
 
-    
     // console.log(formObject);
   };
   return (
