@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, Header, Grid, Button } from "semantic-ui-react";
 // import { Link } from "react-router-dom";
-// import FYBlogo from "../images/FeedYourBean_Blue.png";
+// import FYB_Logo from "../images/FYB_Logo.png";
 
 function NavBar() {
   const location = useLocation();
@@ -12,13 +12,13 @@ function NavBar() {
       <Header className="navHeader">
         <Menu fixed="top">
           <Menu.Item className="navBar" as="a" header>
-            <img
-              // src={FYBlogo}+
+            {/* <img
+              src={FYB_Logo}
               className="fyblue"
-              size="large"
+              // size="large"
               // src={FYBlogo}
               // style={{ marginRight: "1.5em" }}
-            />
+            /> */}
           </Menu.Item>
           <Menu.Item
             className="navItem"

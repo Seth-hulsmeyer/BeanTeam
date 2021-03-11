@@ -33,6 +33,12 @@ module.exports = (app) => {
       password: req.body.password,
       first_name: req.body.firstName,
       last_name: req.body.lastName,
+      topics: {
+        JS: req.body.JS,
+        React: req.body.React,
+        HTML: req.body.HTML,
+        CSS: req.body.CSS,
+      },
       videos: req.body.videos,
     })
       .then((data) => {
@@ -72,5 +78,24 @@ module.exports = (app) => {
   app.post("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
+  });
+
+  app.put("/api/add-video", (req, res) => {
+    console.log(req.body);
+    db.BeanUser.findByIdAndUpdate(
+      req.user._id,
+      {
+        // $set: { topics: { [req.body.topic]: req.body[req.body.topic] } },
+        $push: { videos: req.body.videos },
+      },
+      { new: true }
+    )
+      .then((data) => {
+        res.json(data);
+      })
+      .catch((err) => {
+        // Internal server error
+        res.status(500).send(err);
+      });
   });
 };
