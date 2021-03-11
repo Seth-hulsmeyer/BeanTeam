@@ -35,15 +35,12 @@ function App() {
           {isFetchingUser ? null : (
             <Route exact path="/main" component={Main} />
           )}
-<<<<<<< HEAD
-=======
           {isFetchingUser ? null : (
             <Route exact path="/videos/:id" component={VideoDisplay} />
           )}
           {isFetchingUser ? null : (
             <Route exact path="/videos" component={VideoDisplay} />
           )}
->>>>>>> 09ae55e58f9aca2e6df7ed0f23e5facd785c03ac
         </UserContext.Provider>
       </Switch>
     </Router>
