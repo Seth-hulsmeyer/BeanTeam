@@ -22,7 +22,7 @@ function VideoForm() {
           <ul>
             <strong>Your Watch List</strong>
             {user.videos.map((video) => (
-              <li>
+              <li key={video._id}>
                 <Link
                   to={`/Videos/${video._id}`}
                   className={

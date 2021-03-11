@@ -8,8 +8,7 @@ import { Container, Card } from "semantic-ui-react";
 
 function VideoPlayer() {
   const user = useContext(UserContext);
-  const { id } = useParams();
-  console.log(id);
+  const { _id } = useParams();
 
   const opts = {
     height: "390",
@@ -20,8 +19,9 @@ function VideoPlayer() {
   };
 
   const filterVideos = user.videos.filter((video) => {
-    return video._id == id;
+    return video._id === _id;
   });
+  console.log(_id);
   const onReady = (event) =>
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
@@ -29,7 +29,7 @@ function VideoPlayer() {
   return (
     <Container>
       <Card.Group itemsPerRow={1}>
-        {id ? (
+        {_id ? (
           filterVideos.map((video) => (
             <YouTube videoId={video.videoUrl} opts={opts} onReady={onReady} />
           ))

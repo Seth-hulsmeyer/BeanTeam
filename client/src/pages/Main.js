@@ -31,7 +31,7 @@ function Main() {
   if (!user) {
     return null;
   }
-  const handleToggle = (name, value) => {
+  const handleVidToggle = (name, value) => {
     console.log(name, value);
     let whichVideoArray = [];
     if (value) {
@@ -64,13 +64,6 @@ function Main() {
       [name]: value,
       videos: topicsData.videos,
     });
-    // .then((res) => {
-    //   console.log(res);
-    //   if (res.statusText === "OK") {
-    //     history.push("/login");
-    //   }
-    // });
-    // console.log(topicsData);
   };
 
   return (
@@ -78,7 +71,10 @@ function Main() {
       <NavBar />
       <br></br>
       <Container>
-        <VideoButton handleToggle={handleToggle} topicsData={topicsData} />
+        <VideoButton
+          handleVidToggle={handleVidToggle}
+          topicsData={topicsData}
+        />
         <VideoForm />
       </Container>
     </>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Header, Grid, Button, Image } from "semantic-ui-react";
+import { Menu, Header, Grid, Button } from "semantic-ui-react";
 // import { Link } from "react-router-dom";
-import FYB_Logo from "../images/FYB_Logo.png";
+// import FYB_Logo from "../images/FYB_Logo.png";
 
 function NavBar() {
   const location = useLocation();

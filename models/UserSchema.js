@@ -11,7 +11,7 @@ const BeanUserSchema = new Schema({
   },
   email: {
     type: String,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
@@ -23,14 +23,20 @@ const BeanUserSchema = new Schema({
       videoUrl: { type: String },
     },
   ],
+  topics: [
+    {
+      JS: { type: Boolean },
+      React: { type: Boolean },
+      HTML: { type: Boolean },
+      CSS: { type: Boolean },
+    },
+  ],
 });
 
 const BeanUsers = mongoose.model("bean_users", BeanUserSchema);
 
 // module.exports = BeanDB;
 module.exports = BeanUsers;
-
-
 
 // const bcrypt = require("bcryptjs");
 
@@ -70,4 +76,3 @@ module.exports = BeanUsers;
 //   });
 //   return User;
 // };
-

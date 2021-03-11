@@ -45,6 +45,7 @@ function SignUp() {
     });
   };
 
+  //Sign up toggle
   const handleToggle = (name, value) => {
     // const { name, value } = event.target;
     // setting state

@@ -1,7 +1,7 @@
 // Main Page Video Button
 
 import React, { useContext } from "react";
-import { Grid, Checkbox, Image, Button, Form } from "semantic-ui-react";
+import { Grid, Checkbox } from "semantic-ui-react";
 import UserContext from "../utils/UserContext";
 import jsLogo from "../images/512px-Javascript-icon.png";
 import reactLogo from "../images/512px-React-icon.png";
@@ -20,13 +20,13 @@ function VideoButton(props) {
           computer={4}
           className="ui card vbCard"
         >
-          <img src={jsLogo} className="languageImage" />
-          <div class="content">
-            <a class="header">JavaScript (1995)</a>
-            <div class="meta">
-              <span class="date">Created in 1995</span>
+          <img alt="js" src={jsLogo} className="languageImage" />
+          <div className="content">
+            <h3>JavaScript (1995)</h3>
+            <div className="meta">
+              <span className="date">Created in 1995</span>
             </div>
-            <div class="description">
+            <div className="description">
               As a multi-paradigm language that supports event-driven,
               functional, and imperative programming styles.
             </div>
@@ -38,19 +38,19 @@ function VideoButton(props) {
               name="videos"
               value="JS"
               onChange={() => {
-                props.handleToggle("JS", !props.topicsData.JS);
+                props.handleVidToggle("JS", !props.topicsData.JS);
               }}
             />
           </div>
         </Grid.Column>
         <Grid.Column mobile={16} tablet={8} computer={4} className="ui card">
-          <img src={reactLogo} className="languageImage" />
-          <div class="content">
-            <a class="header">REACT</a>
-            <div class="meta">
-              <span class="date">Created in 2011</span>
+          <img alt="react" src={reactLogo} className="languageImage" />
+          <div className="content">
+            <h3>REACT</h3>
+            <div className="meta">
+              <span className="date">Created in 2011</span>
             </div>
-            <div class="description">
+            <div className="description">
               React is only concerned with state management and rendering that
               state to the DOM. New age coding if you will!
             </div>
@@ -62,19 +62,19 @@ function VideoButton(props) {
               name="videos"
               value="React"
               onChange={() => {
-                props.handleToggle("React", !props.topicsData.React);
+                props.handleVidToggle("React", !props.topicsData.React);
               }}
             />
           </div>
         </Grid.Column>
         <Grid.Column mobile={16} tablet={8} computer={4} className="ui card">
-          <img className="languageImage" src={cssLogo} />
-          <div class="content">
-            <a class="header">CSS</a>
-            <div class="meta">
-              <span class="date">Created in 1996</span>
+          <img alt="css" className="languageImage" src={cssLogo} />
+          <div className="content">
+            <h3>CSS</h3>
+            <div className="meta">
+              <span className="date">Created in 1996</span>
             </div>
-            <div class="description">
+            <div className="description">
               Style sheet language used for describing the presentation of a
               document. Primary works with HTML.
             </div>
@@ -86,23 +86,24 @@ function VideoButton(props) {
               name="videos"
               value="CSS"
               onChange={() => {
-                props.handleToggle("CSS", !props.topicsData.CSS);
+                props.handleVidToggle("CSS", !props.topicsData.CSS);
               }}
             />
           </div>
         </Grid.Column>
         <Grid.Column mobile={16} tablet={8} computer={4} className="ui card">
           <img
+            alt="html"
             className="languageImage"
             src={htmlLogo}
             // style={{ width: "auto", height: "auto" }}
           />
-          <div class="content">
-            <a class="header">HTML</a>
-            <div class="meta">
-              <span class="date">Created in 1993</span>
+          <div className="content">
+            <h3>HTML</h3>
+            <div className="meta">
+              <span className="date">Created in 1993</span>
             </div>
-            <div class="description">
+            <div className="description">
               Standard markup language for documents designed to be displayed in
               a browser.
             </div>
@@ -114,7 +115,7 @@ function VideoButton(props) {
               name="videos"
               value="HTML"
               onChange={() => {
-                props.handleToggle("HTML", !props.topicsData.HTML);
+                props.handleVidToggle("HTML", !props.topicsData.HTML);
               }}
             />
           </div>
