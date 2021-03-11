@@ -35,12 +35,22 @@
 .languageImage {
   width: auto;
   height: 5vw;
-  margin-left: 5vw;
+  margin-left: 7vw;
   margin-top: 1vw;
 }
 
-Button {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+.navHeader {
+  margin-bottom: 2vw;
 }
+
+.vDisplay {
+  margin-top: 1vw;
+}
+
+/* .vListContainer {
+  background-color: aqua;
+  margin-top: 2cw;
+} */
+/* 
+@media only screen and (max-width: 600px) {
+  */
