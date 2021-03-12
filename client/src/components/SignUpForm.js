@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Checkbox, Form, Grid, Segment } from "semantic-ui-react";
 
+
 const SignUpForm = (props) => (
   <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
     <Grid.Column style={{ maxWidth: 450 }}>
@@ -39,6 +40,8 @@ const SignUpForm = (props) => (
             onChange={props.handleInputChange}
             placeholder="Password"
           />
+          <p>{props.passwordStrength}&nbsp;</p>
+          
           <Grid.Row>
             <Grid.Column>
               <Checkbox

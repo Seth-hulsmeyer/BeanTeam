@@ -18,4 +18,8 @@ export default {
   addVideo: function (newTopicsData) {
     return axios.put("/api/add-video", newTopicsData);
   },
+
+  getPasswordStrength: function (password) {
+    return axios.post("/api/checkpassword", {password: password})
+  }
 };

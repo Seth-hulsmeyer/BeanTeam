@@ -1,7 +1,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
-const passwordStrength = require("check-password-strength");
+const { passwordStrength } = require('check-password-strength')
 
 module.exports = (app) => {
   // APP.GET to view a route won't work, res.render is a handlebar functionality
