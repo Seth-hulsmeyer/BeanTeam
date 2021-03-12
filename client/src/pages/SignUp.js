@@ -39,8 +39,8 @@ function SignUp() {
     }
     API.createUser(formObject).then((res) => {
       console.log(res);
-      if (res.statusText === "OK") {
-        history.push("/login");
+      if (res === "OK") {
+        history.push("/api/login");
       }
     });
   };

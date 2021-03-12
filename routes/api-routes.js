@@ -6,15 +6,11 @@ const passwordStrength = require("check-password-strength");
 module.exports = (app) => {
   // APP.GET to view a route won't work, res.render is a handlebar functionality
 
-  // app.get("/login", (req, res) => {
-  //   res.render("login");
-  // });
-
   //Post to verify user is in user table
   // api/ for us to know it's private from the user. They do not see this route
-  app.post("/login", (req, res, next) => {
+  app.post("/api/login", (req, res, next) => {
     passport.authenticate("local", (err, user, info) => {
-      if (!user) res.redirect("/login", { error: info.message });
+      if (!user) res.redirect("/api/signup", { error: info.message });
       else {
         req.logIn(user, (err) => {
           //If present returns to home page or displays errors

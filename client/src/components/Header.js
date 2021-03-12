@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Header, Grid, Button } from "semantic-ui-react";
+import { Menu, Header, Grid } from "semantic-ui-react";
 // import { Link } from "react-router-dom";
-// import FYB_Logo from "../images/FYB_Logo.png";
+import FYB_Logo from "../images/FYB_Logo.png";
 
 function NavBar() {
   const location = useLocation();
@@ -12,27 +12,26 @@ function NavBar() {
       <Header className="navHeader">
         <Menu fixed="top">
           <Menu.Item className="navBar" as="a" header>
-            {/* <img
+            <img
               src={FYB_Logo}
               className="fyblue"
-              // size="large"
+              size="large"
               // src={FYBlogo}
               // style={{ marginRight: "1.5em" }}
-            /> */}
+            />
           </Menu.Item>
-          <Menu.Item
-            className="navItem"
-            action="logout"
-            method="post"
-            as="form"
-          >
-            <Button type="submit">Logout</Button>
+          <Menu.Item className="navItem">
+            {" "}
+            <Link
+              to="/main"
+              className={
+                location.pathname === "/main" ? "nav-link active" : "nav-link"
+              }
+            >
+              Home
+            </Link>
           </Menu.Item>
           <Menu.Item>
-            {/* className="navItem"
-          name="My Videos"
-          active={activeItem === "Home"}
-          onClick={} */}
             <Link
               to="/videos"
               className={
@@ -40,6 +39,21 @@ function NavBar() {
               }
             >
               My Videos
+            </Link>
+          </Menu.Item>
+          <Menu.Item
+            className="navItem"
+            action="logout"
+            method="post"
+            as="form"
+          >
+            <Link
+              to="/logout"
+              className={
+                location.pathname === "/logout" ? "nav-link active" : "nav-link"
+              }
+            >
+              Logout
             </Link>
           </Menu.Item>
         </Menu>
