@@ -90,7 +90,7 @@ const SignUpForm = (props) => (
             Submit
           </Button>
           <p>
-            Or log in <a href="/login">here</a>
+            Or log in <a href="/api/login">here</a>
           </p>
         </Segment>
       </Form>

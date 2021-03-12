@@ -34,24 +34,11 @@ function Main() {
   const handleVidToggle = (name, value) => {
     console.log(name, value);
     let whichVideoArray = [];
-    if (value) {
-      switch (name) {
-        case "JS":
-          whichVideoArray = whichVideoArray.concat(Videos.JsVideoArray);
-          break;
-        case "React":
-          whichVideoArray = whichVideoArray.concat(Videos.ReactVideoArray);
-          break;
-        case "CSS":
-          whichVideoArray = whichVideoArray.concat(Videos.cssVideoArray);
-          break;
-        case "HTML":
-          whichVideoArray = whichVideoArray.concat(Videos.htmlVideoArray);
-          break;
-        default:
-          whichVideoArray = [];
-          break;
-      }
+
+    if (user.topics) {
+      whichVideoArray = whichVideoArray.concat(Videos);
+    } else {
+      console.log("else statement");
     }
     topicsData.videos = topicsData.videos.concat(whichVideoArray);
     setTopicsData({
@@ -80,5 +67,4 @@ function Main() {
     </>
   );
 }
-
 export default Main;
