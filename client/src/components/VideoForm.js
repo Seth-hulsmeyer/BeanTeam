@@ -6,7 +6,6 @@ import UserContext from "../utils/UserContext";
 
 function VideoForm() {
   const location = useLocation();
-
   const user = useContext(UserContext);
   // console.log(user);
   if (!user) {
@@ -16,25 +15,25 @@ function VideoForm() {
 
   return (
     <>
-      <h1>Hello {user.first_name}!</h1>
       <div className="card">
         <div className="content">
           <ul>
             <strong>Your Watch List</strong>
-            {user.videos.map((video) => (
-              <li key={video._id}>
-                <Link
-                  to={`/Videos/${video._id}`}
-                  className={
-                    location.pathname === "/videos"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
-                >
-                  {video.title}
-                </Link>
-              </li>
-            ))}
+            {user.videos.length &&
+              user.videos.map((video) => (
+                <li key={video.id}>
+                  <Link
+                    to={`/Videos/${video._id}`}
+                    className={
+                      location.pathname === "/videos"
+                        ? "nav-link active"
+                        : "nav-link"
+                    }
+                  >
+                    {video.title}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </div>
       </div>

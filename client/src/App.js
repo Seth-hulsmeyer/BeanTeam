@@ -11,7 +11,6 @@ import UserContext from "./utils/UserContext";
 
 function App() {
   const [user, setUser] = useState();
-
   const [isFetchingUser, setIsFetchingUser] = useState(true);
 
   useEffect(() => {
@@ -32,7 +31,7 @@ function App() {
       <Switch>
         {/* <UserContext.Provider value={user}> */}
         <Route exact path="/" component={SignUp} />
-        <Route exact path="/api/login" component={Login} />
+        <Route exact path="/login" component={Login} />
         {/* </UserContext.Provider> */}
         <UserContext.Provider value={user}>
           {isFetchingUser ? null : (

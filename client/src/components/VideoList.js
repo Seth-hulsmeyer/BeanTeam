@@ -12,10 +12,10 @@ function VideoList() {
 
   const [video, currentVideo] = useState();
 
-  const setCurrentVideo = (event) => {
-    currentVideo(event.currentTarget.id);
-    console.log(video);
-  };
+  // const setCurrentVideo = (event) => {
+  //   currentVideo(event.currentTarget.id);
+  //   console.log(video);
+  // };
 
   useEffect(() => {
     console.log(video);

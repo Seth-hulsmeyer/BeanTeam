@@ -1,7 +1,7 @@
 // Main Page Video Button
 
 import React, { useContext } from "react";
-import { Grid, Checkbox } from "semantic-ui-react";
+import { Grid, Checkbox, Divider } from "semantic-ui-react";
 import UserContext from "../utils/UserContext";
 import jsLogo from "../images/512px-Javascript-icon.png";
 import reactLogo from "../images/512px-React-icon.png";
@@ -13,6 +13,9 @@ function VideoButton(props) {
   console.log(user);
   return (
     <Grid className="videoButtonCard" columns={4} style={{ margin: "2vw" }}>
+      <h1>
+        Hello {user.first_name} {user.last_name}!
+      </h1>
       <Grid.Row>
         <Grid.Column
           mobile={16}
@@ -31,6 +34,7 @@ function VideoButton(props) {
               functional, and imperative programming styles.
             </div>
             <br></br>
+            <Divider horizontal></Divider>
             <Checkbox
               toggle
               defaultChecked={props.topicsData.JS}
@@ -55,6 +59,7 @@ function VideoButton(props) {
               state to the DOM. New age coding if you will!
             </div>
             <br></br>
+            <Divider horizontal></Divider>
             <Checkbox
               toggle
               defaultChecked={props.topicsData.React}
@@ -79,6 +84,7 @@ function VideoButton(props) {
               document. Primary works with HTML.
             </div>
             <br></br>
+            <Divider horizontal></Divider>
             <Checkbox
               toggle
               defaultChecked={props.topicsData.CSS}
@@ -107,7 +113,9 @@ function VideoButton(props) {
               Standard markup language for documents designed to be displayed in
               a browser.
             </div>
-            <br></br>
+            <br />
+            <br />
+            <Divider horizontal></Divider>
             <Checkbox
               toggle
               defaultChecked={props.topicsData.HTML}

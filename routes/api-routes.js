@@ -38,7 +38,7 @@ module.exports = (app) => {
       videos: req.body.videos,
     })
       .then((data) => {
-        //Redirects to login
+        // return res.redirect("/api/login");
         res.status(200).json(data);
       })
       .catch((err) => {
