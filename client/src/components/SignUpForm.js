@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button, Checkbox, Form, Grid, Segment } from "semantic-ui-react";
 
 const SignUpForm = (props) => (
@@ -90,7 +91,7 @@ const SignUpForm = (props) => (
             Submit
           </Button>
           <p>
-            Or log in <a href="/api/login">here</a>
+            Or log in <Link to="/login">here</Link>
           </p>
         </Segment>
       </Form>

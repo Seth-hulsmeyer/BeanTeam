@@ -37,12 +37,16 @@ function SignUp() {
     if (formObject.CSS) {
       formObject.videos = formObject.videos.concat(Videos.cssVideoArray);
     }
-    API.createUser(formObject).then((res) => {
-      console.log(res);
-      if (res === "OK") {
-        history.push("/api/login");
-      }
-    });
+    API.createUser(formObject)
+      .then((res) => {
+        console.log(res);
+        if (res.statusText === "OK") {
+          history.push("/login");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   //Sign up toggle

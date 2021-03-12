@@ -2,17 +2,20 @@
 
 import React, { useContext } from "react";
 import { Grid, Checkbox, Divider } from "semantic-ui-react";
-// import UserContext from "../utils/UserContext";
+import UserContext from "../utils/UserContext";
 import jsLogo from "../images/512px-Javascript-icon.png";
 import reactLogo from "../images/512px-React-icon.png";
 import htmlLogo from "../images/512px-HTML5-icon.png";
 import cssLogo from "../images/512px-CSS3-icon.png";
 
 function VideoButton(props) {
-  // const user = useContext(UserContext);
-  // console.log(user);
+  const user = useContext(UserContext);
+  console.log(user);
   return (
     <Grid className="videoButtonCard" columns={4} style={{ margin: "2vw" }}>
+      <h1>
+        Hello {user.first_name} {user.last_name}!
+      </h1>
       <Grid.Row>
         <Grid.Column
           mobile={16}

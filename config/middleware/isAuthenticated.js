@@ -8,6 +8,6 @@ module.exports = (req, res, next) => {
   }
   // if the user is not logged in it will shoot them to the log in page
   else {
-    return res.redirect("/api/login");
+    return res.redirect("/login");
   }
 };

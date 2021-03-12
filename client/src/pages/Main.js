@@ -34,17 +34,37 @@ function Main() {
     console.log(name, value);
     let whichVideoArray = [];
 
-    if (user.topics) {
-      whichVideoArray = whichVideoArray.concat(Videos);
-    } else {
-      console.log("else statement");
-    }
-    topicsData.videos = topicsData.videos.concat(whichVideoArray);
+    // if (user.topics) {
+    //   whichVideoArray = whichVideoArray.concat(Videos);
+    // } else {
+    //   console.log("else statement");
+    // }
+    // topicsData.videos = topicsData.videos.concat(whichVideoArray); // 4 times,
     setTopicsData({
       ...topicsData,
       [name]: value,
-      videos: topicsData.videos,
+      videos: [],
     });
+    const userVideos = [];
+    user.videos.forEach((element) => {
+      user.videos.push(element.category);
+    });
+    console.log(userVideos);
+    // if (user.topics) {
+    if (topicsData.JS === true && !userVideos.includes("JS")) {
+      setTopicsData({ ...topicsData, videos: [...Videos.JsVideoArray] });
+    }
+    if (topicsData.CSS === true && !userVideos.includes("CSS")) {
+      setTopicsData({ ...topicsData, videos: [...Videos.cssVideoArray] });
+    }
+    if (topicsData.HTML === true && !userVideos.includes("HTML")) {
+      setTopicsData({ ...topicsData, videos: [...Videos.htmlVideoArray] });
+    }
+    if (topicsData.React === true && !userVideos.includes("React")) {
+      setTopicsData({ ...topicsData, videos: [...Videos.ReactVideoArray] });
+    }
+    // }
+
     API.addVideo({
       topic: name,
       [name]: value,
