@@ -10,10 +10,7 @@ import { useHistory } from "react-router-dom";
 
 function Main() {
   const user = useContext(UserContext);
-<<<<<<< HEAD
-=======
-  console.log(user);
-
+  // console.log(user);
   const [topicsData, setTopicsData] = useState({
     JS: user.topics.JS,
     HTML: user.topics.HTML,
@@ -22,7 +19,6 @@ function Main() {
     videos: [],
   });
 
->>>>>>> 6575227d14c52c2d49e296c30c7d4ecc1beb0416
   const history = useHistory();
 
   useEffect(() => {

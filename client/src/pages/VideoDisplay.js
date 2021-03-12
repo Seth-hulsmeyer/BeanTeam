@@ -9,18 +9,8 @@ function VideoDisplay() {
     <>
       <NavBar />
       <br></br>
-      <Grid columns={2} style={{ margin: "2vw" }}>
-        <Grid.Row>
-          <Grid.Column className="vDisplay">
-            <VideoPlayer />
-          </Grid.Column>
-          <Grid.Column className="vListContainer">
-            <VideoForm />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-      {/* <VideoPlayer /> */}
-      {/* <VideoForm /> */}
+      <VideoPlayer />
+      <VideoForm />
     </>
   );
 }
