@@ -4,6 +4,7 @@ import SignUpForm from "../components/SignUpForm";
 import API from "../utils/API";
 import Videos from "../utils/Videos";
 
+
 function SignUp() {
   // forcing a url change 2/8/25
   const history = useHistory();
@@ -19,6 +20,8 @@ function SignUp() {
     HTML: false,
     CSS: false,
   });
+
+  const [passwordStrength, setPasswordStrength] = useState("")
   // const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
@@ -70,23 +73,15 @@ function SignUp() {
       [name]: value,
     });
 
-    // if (name === 'password') {
-
-    //   fetch("/api/checkpassword", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       password: value,
-    //     }),
-    //   }).then((response) => {
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     passwordStrength.textContent = data.strength
-    //   })
-    // }
+    
+      if (name === "password") {
+        API.getPasswordStrength(value)
+          .then((res) => {
+            setPasswordStrength(res.data.strength)
+          })
+      }
+      
+    
 
     // console.log(formObject);
   };
@@ -97,6 +92,9 @@ function SignUp() {
         handleInputChange={handleInputChange}
         handleToggle={handleToggle}
         formObject={formObject}
+        passwordStrength={passwordStrength}
+        
+        
       />
     </>
   );
