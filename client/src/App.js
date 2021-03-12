@@ -31,7 +31,7 @@ function App() {
       <Switch>
         {/* <UserContext.Provider value={user}> */}
         <Route exact path="/" component={SignUp} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/api/login" component={Login} />
         {/* </UserContext.Provider> */}
         <UserContext.Provider value={user}>
           {isFetchingUser ? null : (
