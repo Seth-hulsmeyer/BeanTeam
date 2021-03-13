@@ -3,6 +3,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import UserContext from "../utils/UserContext";
+import { List, Container } from "semantic-ui-react";
 
 function VideoForm() {
   const location = useLocation();
@@ -15,28 +16,26 @@ function VideoForm() {
 
   return (
     <>
-      <div className="card">
-        <div className="content">
-          <ul>
-            <strong>Your Watch List</strong>
-            {user.videos.length &&
-              user.videos.map((video) => (
-                <li key={video.id}>
-                  <Link
-                    to={`/Videos/${video._id}`}
-                    className={
-                      location.pathname === "/videos"
-                        ? "nav-link active"
-                        : "nav-link"
-                    }
-                  >
-                    {video.title}
-                  </Link>
-                </li>
-              ))}
-          </ul>
-        </div>
-      </div>
+      <Container>
+        <h3>Your Watch List</h3>
+        <List selection verticalAlign="middle">
+          {user.videos.length &&
+            user.videos.map((video) => (
+              <List.Item key={video.id}>
+                <Link
+                  to={`/Videos/${video._id}`}
+                  className={
+                    location.pathname === "/videos"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  {video.title}
+                </Link>
+              </List.Item>
+            ))}
+        </List>
+      </Container>
     </>
   );
 }
