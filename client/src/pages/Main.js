@@ -32,7 +32,7 @@ function Main() {
   }
   const handleVidToggle = (name, value) => {
     console.log(name, value);
-    let whichVideoArray = [];
+    // let whichVideoArray = [];
 
     // if (user.topics) {
     //   whichVideoArray = whichVideoArray.concat(Videos);
@@ -45,6 +45,9 @@ function Main() {
       [name]: value,
       videos: [],
     });
+
+    // maybe we put this into a function - useEffect?
+
     const userVideos = [];
     user.videos.forEach((element) => {
       user.videos.push(element.category);

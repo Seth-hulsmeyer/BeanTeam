@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, Header, Grid } from "semantic-ui-react";
-// import { Link } from "react-router-dom";
 import FYB_Logo from "../images/FYB_Logo.png";
 
 function NavBar() {
@@ -16,6 +15,7 @@ function NavBar() {
               src={FYB_Logo}
               className="fyblue"
               size="large"
+              alt="logo"
               // src={FYBlogo}
               // style={{ marginRight: "1.5em" }}
             />
