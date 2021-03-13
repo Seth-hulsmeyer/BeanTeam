@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext, useState, useRef } from "react";
 import { Container } from "semantic-ui-react";
 import NavBar from "../components/Header";
 import VideoButton from "../components/VideoButton";
@@ -10,12 +10,21 @@ import { useHistory } from "react-router-dom";
 
 function Main() {
   const user = useContext(UserContext);
-  // console.log(user);
-  const [topicsData, setTopicsData] = useState({
-    JS: user.topics.JS,
-    HTML: user.topics.HTML,
-    CSS: user.topics.CSS,
-    React: user.topics.React,
+  console.log(user);
+  const [JS, SetJS] = useState(false);
+  const [CSS, SetCSS] = useState(false);
+  const [REACT, SetREACT] = useState(false);
+  const [HTML, SetHTML] = useState(false);
+  const JStoggleEl = useRef();
+  const CSStoggleEl = useRef();
+  const REACTtoggleEl = useRef();
+  const HTMLtoggleEl = useRef();
+
+  const [topicsData, setData] = useState({
+    JS: false,
+    HTML: false,
+    CSS: false,
+    React: false,
     videos: [],
   });
 
@@ -27,53 +36,124 @@ function Main() {
     }
   }, [user, history]);
 
+  useEffect(
+    (name, value) => {
+      const userVideos = [];
+      console.log("this changed", JS);
+
+      if (JS) {
+        console.log("inside JS if");
+        setData((data) => ({
+          videos: [...Videos.JsVideoArray],
+        }));
+        topicsData.videos.push(...Videos.JsVideoArray);
+        console.log(topicsData);
+        console.log("this changed", JS);
+      }
+
+      else {
+        topicsData.videos.filter((video) => {
+          return
+        })
+      }
+
+      const currentVideos = user.videos.map((item) => {
+        return item.category;
+      });
+      if (!currentVideos.includes("JS")) {
+        API.addVideo({
+          topic: name,
+          [name]: value,
+          videos: topicsData.videos,
+        });
+      }
+    },
+    [JS]
+  );
+
+  useEffect(
+    (name, value) => {
+      if (CSS) {
+        console.log("inside CSS if");
+        setData((data) => ({
+          videos: [...Videos.cssVideoArray],
+        }));
+        topicsData.videos.push(...Videos.cssVideoArray);
+        console.log(topicsData);
+        console.log("this changed", CSS);
+      }
+      const currentVideos = user.videos.map((item) => {
+        return item.category;
+      });
+
+      if (!currentVideos.includes("CSS")) {
+        API.addVideo({
+          topic: name,
+          [name]: value,
+          videos: topicsData.videos,
+        });
+      }
+    },
+    [CSS]
+  );
+
+  useEffect(
+    (name, value) => {
+      if (HTML) {
+        console.log("inside HTML if");
+        setData((data) => ({
+          videos: [...Videos.htmlVideoArray],
+        }));
+        topicsData.videos.push(...Videos.htmlVideoArray);
+        console.log(topicsData);
+        console.log("this changed", HTML);
+      }
+      const currentVideos = user.videos.map((item) => {
+        return item.category;
+      });
+
+      if (!currentVideos.includes("HTML")) {
+        API.addVideo({
+          topic: name,
+          [name]: value,
+          videos: topicsData.videos,
+        });
+      }
+    },
+    [HTML]
+  );
+
+  useEffect(
+    (name, value) => {
+      if (REACT) {
+        console.log("inside React if");
+        setData((data) => ({
+          videos: [...Videos.ReactVideoArray],
+        }));
+        topicsData.videos.push(...Videos.ReactVideoArray);
+        console.log(topicsData);
+        console.log("this changed", REACT);
+      }
+
+      const currentVideos = user.videos.map((item) => {
+        return item.category;
+      });
+
+      if (!currentVideos.includes("React")) {
+        API.addVideo({
+          topic: name,
+          [name]: value,
+          videos: topicsData.videos,
+        });
+      }
+    },
+    [REACT]
+  );
+
   if (!user) {
     return null;
   }
-  const handleVidToggle = (name, value) => {
-    console.log(name, value);
-    // let whichVideoArray = [];
 
-    // if (user.topics) {
-    //   whichVideoArray = whichVideoArray.concat(Videos);
-    // } else {
-    //   console.log("else statement");
-    // }
-    // topicsData.videos = topicsData.videos.concat(whichVideoArray); // 4 times,
-    setTopicsData({
-      ...topicsData,
-      [name]: value,
-      videos: [],
-    });
-
-    // maybe we put this into a function - useEffect?
-
-    const userVideos = [];
-    user.videos.forEach((element) => {
-      user.videos.push(element.category);
-    });
-    console.log(userVideos);
-    // if (user.topics) {
-    if (topicsData.JS === true && !userVideos.includes("JS")) {
-      setTopicsData({ ...topicsData, videos: [...Videos.JsVideoArray] });
-    }
-    if (topicsData.CSS === true && !userVideos.includes("CSS")) {
-      setTopicsData({ ...topicsData, videos: [...Videos.cssVideoArray] });
-    }
-    if (topicsData.HTML === true && !userVideos.includes("HTML")) {
-      setTopicsData({ ...topicsData, videos: [...Videos.htmlVideoArray] });
-    }
-    if (topicsData.React === true && !userVideos.includes("React")) {
-      setTopicsData({ ...topicsData, videos: [...Videos.ReactVideoArray] });
-    }
-    // }
-
-    API.addVideo({
-      topic: name,
-      [name]: value,
-      videos: topicsData.videos,
-    });
-  };
 
   return (
     <>
@@ -81,7 +161,19 @@ function Main() {
       <br></br>
       <Container>
         <VideoButton
-          handleVidToggle={handleVidToggle}
+          jsSetter={SetJS}
+          jsState={JS}
+          jsRef={JStoggleEl}
+          CSSSetter={SetCSS}
+          CSSState={CSS}
+          CSSRef={CSStoggleEl}
+          REACTSetter={SetREACT}
+          REACTState={REACT}
+          REACTRef={REACTtoggleEl}
+          HTMLSetter={SetHTML}
+          HTMLState={HTML}
+          HTMLRef={HTMLtoggleEl}
+          // handleVidToggle={handleVidToggle}
           topicsData={topicsData}
         />
         <VideoForm />

@@ -20,10 +20,12 @@ function App() {
         setIsFetchingUser(false);
         console.log(res.data);
       })
+      
       .catch((err) => {
         console.log(err);
         setIsFetchingUser(false);
       });
+      
   }, []);
 
   return (
