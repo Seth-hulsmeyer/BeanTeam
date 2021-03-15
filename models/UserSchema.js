@@ -23,14 +23,14 @@ const BeanUserSchema = new Schema({
       videoUrl: { type: String },
     },
   ],
-  topics: [
+  topics: 
     {
       JS: { type: Boolean },
       React: { type: Boolean },
       HTML: { type: Boolean },
       CSS: { type: Boolean },
     },
-  ],
+  
 });
 
 const BeanUsers = mongoose.model("bean_users", BeanUserSchema);

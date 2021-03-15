@@ -1,11 +1,20 @@
 import React from "react";
-import { Button, Form, Grid, Segment } from "semantic-ui-react";
+import { Button, Form, Grid, Segment, Image } from "semantic-ui-react";
+import FYB_finals5 from "../images/FYB_finals5.png";
 
 const LoginForm = (props) => (
   <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
     <Grid.Column style={{ maxWidth: 450 }}>
       <Form size="large" action="/api/login" method="post">
         <Segment stacked>
+          <Image
+            src={FYB_finals5}
+            className="fyblue"
+            // size="large"
+            alt="logo"
+            // src={FYBlogo}
+            style={{ height: "25vw", width: "90vw", marginbottom: "-25vw" }}
+          />
           <Form.Input
             label="Email"
             type="email"

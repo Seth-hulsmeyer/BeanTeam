@@ -1,7 +1,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
-const { passwordStrength } = require('check-password-strength')
+const { passwordStrength } = require("check-password-strength");
 
 module.exports = (app) => {
   // APP.GET to view a route won't work, res.render is a handlebar functionality
@@ -77,11 +77,11 @@ module.exports = (app) => {
   });
 
   app.put("/api/add-video", (req, res) => {
-    console.log(req.body);
+    console.log(req.body.videos);
     db.BeanUser.findByIdAndUpdate(
       req.user._id,
       {
-        // $set: { topics: { [req.body.topic]: req.body[req.body.topic] } },
+        // $set: { topics: req.body.topics  },
         $push: { videos: req.body.videos },
       },
       { new: true }

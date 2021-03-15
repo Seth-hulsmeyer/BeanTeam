@@ -10,7 +10,7 @@ import cssLogo from "../images/512px-CSS3-icon.png";
 
 function VideoButton(props) {
   const user = useContext(UserContext);
-  console.log(user);
+  
   return (
     <Grid className="videoButtonCard" columns={4} style={{ margin: "2vw" }}>
       <h1>
@@ -35,15 +35,21 @@ function VideoButton(props) {
             </div>
             <br></br>
             <Divider horizontal></Divider>
-            <Checkbox
+            {/* <Checkbox
               toggle
               defaultChecked={props.topicsData.JS}
               label="Add JS"
               name="videos"
-              value="JS"
+              // value="JS"
               onChange={() => {
                 props.handleVidToggle("JS", !props.topicsData.JS);
               }}
+            /> */}
+            <Checkbox toggle 
+            defaultChecked={props.topicsData.JS}
+            ref={props.jsRef}
+            value={props.jsState}
+            onClick={()=> props.jsSetter(!props.jsState)}
             />
           </div>
         </Grid.Column>
@@ -60,15 +66,21 @@ function VideoButton(props) {
             </div>
             <br></br>
             <Divider horizontal></Divider>
-            <Checkbox
+            {/* <Checkbox
               toggle
-              defaultChecked={props.topicsData.React}
+              // defaultChecked={props.topicsData.React}
               label="Add React"
               name="videos"
               value="React"
               onChange={() => {
                 props.handleVidToggle("React", !props.topicsData.React);
               }}
+            /> */}
+            <Checkbox toggle 
+            defaultChecked={props.topicsData.REACT}
+            ref={props.REACTRef}
+            value={props.REACTState}
+            onClick={()=> props.REACTSetter(!props.REACTState)}
             />
           </div>
         </Grid.Column>
@@ -85,15 +97,22 @@ function VideoButton(props) {
             </div>
             <br></br>
             <Divider horizontal></Divider>
-            <Checkbox
+            {/* <Checkbox
               toggle
               defaultChecked={props.topicsData.CSS}
+              checked={props.topicsData.CSS}
               label="Add CSS"
               name="videos"
-              value="CSS"
+              // value="CSS"
               onChange={() => {
                 props.handleVidToggle("CSS", !props.topicsData.CSS);
               }}
+            /> */}
+            <Checkbox toggle 
+            defaultChecked={props.topicsData.CSS}
+            ref={props.CSSRef}
+            value={props.CSSState}
+            onClick={()=> props.CSSSetter(!props.CSSState)}
             />
           </div>
         </Grid.Column>
@@ -116,15 +135,21 @@ function VideoButton(props) {
             <br />
             <br />
             <Divider horizontal></Divider>
-            <Checkbox
+            {/* <Checkbox
               toggle
               defaultChecked={props.topicsData.HTML}
               label="HTML"
               name="videos"
-              value="HTML"
+              // value="HTML"
               onChange={() => {
                 props.handleVidToggle("HTML", !props.topicsData.HTML);
               }}
+            /> */}
+            <Checkbox toggle 
+            defaultChecked={props.topicsData.HTML}
+            ref={props.HTMLRef}
+            value={props.HTMLState}
+            onClick={()=> props.HTMLSetter(!props.HTMLState)}
             />
           </div>
         </Grid.Column>
