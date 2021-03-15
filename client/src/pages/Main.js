@@ -51,11 +51,11 @@ function Main() {
         console.log("this changed", JS);
       }
 
-      else {
-        topicsData.videos.filter((video) => {
-          return
-        })
-      }
+      // else {
+      //   topicsData.videos.filter((video) => {
+      //     return
+      //   })
+      // }
 
       const currentVideos = user.videos.map((item) => {
         return item.category;
@@ -82,6 +82,7 @@ function Main() {
         console.log(topicsData);
         console.log("this changed", CSS);
       }
+
       const currentVideos = user.videos.map((item) => {
         return item.category;
       });
@@ -153,7 +154,6 @@ function Main() {
   if (!user) {
     return null;
   }
-
 
   return (
     <>

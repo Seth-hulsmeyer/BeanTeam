@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Header, Grid } from "semantic-ui-react";
+import { Menu, Header, Grid, Image } from "semantic-ui-react";
 import FYB_Logo from "../images/FYB_Logo.png";
 
 function NavBar() {
@@ -11,11 +11,13 @@ function NavBar() {
       <Header className="navHeader">
         <Menu fixed="top">
           <Menu.Item className="navBar" as="a" header>
-            <img
+            <Image
               src={FYB_Logo}
               className="fyblue"
-              size="large"
+              size="small"
               alt="logo"
+              // style={{ height: "20vw", width: "40vw" }}
+
               // src={FYBlogo}
               // style={{ marginRight: "1.5em" }}
             />
@@ -48,9 +50,9 @@ function NavBar() {
             as="form"
           >
             <Link
-              to="/logout"
+              to="/"
               className={
-                location.pathname === "/logout" ? "nav-link active" : "nav-link"
+                location.pathname === "/" ? "nav-link active" : "nav-link"
               }
             >
               Logout
