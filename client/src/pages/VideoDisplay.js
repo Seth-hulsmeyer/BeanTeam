@@ -8,7 +8,6 @@ function VideoDisplay() {
   return (
     <>
       <NavBar />
-      <br></br>
       <VideoPlayer />
       <VideoForm />
     </>

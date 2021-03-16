@@ -28,7 +28,7 @@ function VideoPlayer() {
 
   return (
     <Container>
-      <Card.Group itemsPerRow={1}>
+      <Card.Group itemsPerRow={1} className="playVideo">
         {id ? (
           filterVideos.map((video) => (
             <YouTube videoId={video.videoUrl} opts={opts} onReady={onReady} />

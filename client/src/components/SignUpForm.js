@@ -14,7 +14,7 @@ const SignUpForm = (props) => (
   <>
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Form size="large" onSubmit={props.handleSubmit}>
+        <Form size="medium" onSubmit={props.handleSubmit}>
           <Segment stacked>
             <Image
               src={FYB_finals2}
