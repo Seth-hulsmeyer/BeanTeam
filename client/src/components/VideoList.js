@@ -7,7 +7,7 @@ import UserContext from "../utils/UserContext";
 
 function VideoList() {
   const location = useLocation();
-  const user = useContext(UserContext);
+  const {user} = useContext(UserContext);
   const [video, currentVideo] = useState();
 
   // const setCurrentVideo = (event) => {
@@ -24,24 +24,27 @@ function VideoList() {
   return (
     <>
       <Container>
-        <h3>Your Watch List</h3>
-        <List selection verticalAlign="middle">
-          {user.videos.length &&
-            user.videos.map((video) => (
-              <List.Item key={video.id}>
-                <Link
-                  to={`/Videos/${video._id}`}
-                  className={
-                    location.pathname === "/videos"
-                      ? "nav-link active"
-                      : "nav-link"
-                  }
-                >
-                  {video.title}
-                </Link>
-              </List.Item>
-            ))}
-        </List>
+        {user.videos.length > 0 ? (
+          <>
+            <h3>Your Watch List</h3>
+            <List selection verticalAlign="middle">
+              {user.videos.map((video) => (
+                <List.Item key={video.id}>
+                  <Link
+                    to={`/Videos/${video._id}`}
+                    className={
+                      location.pathname === "/videos"
+                        ? "nav-link active"
+                        : "nav-link"
+                    }
+                  >
+                    {video.title}
+                  </Link>
+                </List.Item>
+              ))}
+            </List>  
+          </>
+        ) : null }
       </Container>
     </>
   );

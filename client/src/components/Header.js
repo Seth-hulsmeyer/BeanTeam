@@ -5,7 +5,6 @@ import FYB_Logo from "../images/FYB_Logo.png";
 
 function NavBar() {
   const location = useLocation();
-
   return (
     <>
       <Header className="navHeader">
@@ -16,7 +15,7 @@ function NavBar() {
               className="fyblue"
               size="small"
               alt="logo"
-              // style={{ height: "20vw", width: "40vw" }}
+              style={{ height: 30, width: 'auto' }}
 
               // src={FYBlogo}
               // style={{ marginRight: "1.5em" }}
