@@ -29,12 +29,16 @@ const SignUpForm = (props) => (
               // size="large"
               alt="logo"
               // src={FYBlogo}
+<<<<<<< HEAD
               style={{
                 height: "auto",
                 width: "95vw",
                 margin: "-15%",
                 marginLeft: "1%",
               }}
+=======
+              style={{ height: 200, width: '100%', marginBottom: 20 }}
+>>>>>>> c6aae4324dc0c2ffac904ef423e3775bfed189bc
             />
             <Form.Input
               label="First Name"
