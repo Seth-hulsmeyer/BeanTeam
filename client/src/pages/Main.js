@@ -4,7 +4,6 @@ import NavBar from "../components/Header";
 import VideoButton from "../components/VideoButton";
 import VideoForm from "../components/VideoForm";
 import UserContext from "../utils/UserContext";
-// import API from "../utils/API";
 import Videos from "../utils/Videos";
 import { useHistory } from "react-router-dom";
 
@@ -29,15 +28,6 @@ function Main() {
   const CSStoggleEl = useRef();
   const REACTtoggleEl = useRef();
   const HTMLtoggleEl = useRef();
-
-  // const [topicsData, setData] = useState({
-  //   JS: false,
-  //   HTML: false,
-  //   CSS: false,
-  //   React: false,
-  //   videos: [],
-  // });
-
   const history = useHistory();
 
   useEffect(() => {

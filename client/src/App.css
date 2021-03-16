@@ -12,11 +12,41 @@
   margin-right: 15px !important;
 }
 
-.playVideo {
-  padding-top: 15%;
-  padding-bottom: 30px;
+.memeVideo {
+  margin-top: 10%;
 }
 
 .videoButtonCard {
-  padding-top: 60px !important;
+  padding-top: 80px !important;
+}
+
+.videoSelection {
+  margin-top: 15px;
+  padding-bottom: 30px;
+}
+
+.greeting {
+  padding-top: 10%;
+}
+
+.blinky {
+  animation: blinkingText 1.5s infinite;
+  margin-bottom: 15px;
+}
+@keyframes blinkingText {
+  0% {
+    color: #000;
+  }
+  49% {
+    color: #000;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: #000;
+  }
 }

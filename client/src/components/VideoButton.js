@@ -9,10 +9,10 @@ import htmlLogo from "../images/512px-HTML5-icon.png";
 import cssLogo from "../images/512px-CSS3-icon.png";
 
 function VideoButton(props) {
-  const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   return (
     <Grid className="videoButtonCard" columns={4} style={{ margin: "2vw" }}>
-      <h1>
+      <h1 className="greetingMain">
         Hello {user.first_name} {user.last_name}!
       </h1>
       <Grid.Row>
@@ -34,11 +34,11 @@ function VideoButton(props) {
             </div>
             <br></br>
             <Divider horizontal></Divider>
-            <Checkbox 
-              toggle 
+            <Checkbox
+              toggle
               ref={props.jsRef}
               checked={props.jsState}
-              onClick={()=> props.jsSetter(!props.jsState)}
+              onClick={() => props.jsSetter(!props.jsState)}
             />
           </div>
         </Grid.Column>
@@ -55,11 +55,11 @@ function VideoButton(props) {
             </div>
             <br></br>
             <Divider horizontal></Divider>
-            <Checkbox 
+            <Checkbox
               toggle
               ref={props.REACTRef}
               checked={props.REACTState}
-              onClick={()=> props.REACTSetter(!props.REACTState)}
+              onClick={() => props.REACTSetter(!props.REACTState)}
             />
           </div>
         </Grid.Column>
@@ -76,11 +76,11 @@ function VideoButton(props) {
             </div>
             <br></br>
             <Divider horizontal></Divider>
-            <Checkbox 
-              toggle 
+            <Checkbox
+              toggle
               ref={props.CSSRef}
               checked={props.CSSState}
-              onClick={()=> props.CSSSetter(!props.CSSState)}
+              onClick={() => props.CSSSetter(!props.CSSState)}
             />
           </div>
         </Grid.Column>
@@ -104,10 +104,10 @@ function VideoButton(props) {
             <br />
             <Divider horizontal></Divider>
             <Checkbox
-              toggle 
+              toggle
               ref={props.HTMLRef}
               checked={props.HTMLState}
-              onClick={()=> props.HTMLSetter(!props.HTMLState)}
+              onClick={() => props.HTMLSetter(!props.HTMLState)}
             />
           </div>
         </Grid.Column>

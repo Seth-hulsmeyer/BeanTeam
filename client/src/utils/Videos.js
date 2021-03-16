@@ -112,9 +112,18 @@ const ReactVideoArray = [
   },
 ];
 
+const meme = [
+  {
+    category: "default",
+    title: "Please select a category",
+    videoUrl: "zqLEO5tIuYs",
+  },
+];
+
 export default {
   JsVideoArray,
   cssVideoArray,
   htmlVideoArray,
   ReactVideoArray,
+  meme,
 };
