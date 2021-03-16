@@ -10,12 +10,10 @@ const LoginForm = (props) => (
           <Image
             src={FYB_finals5}
             className="fyblue"
-            // size="large"
             alt="logo"
-            // src={FYBlogo}
             style={{
-              height: 200,
-              width: "auto",
+              height: "100%",
+              width: 300,
               marginBottom: 20,
               marginLeft: "auto",
               marginRight: "auto",
@@ -34,8 +32,6 @@ const LoginForm = (props) => (
             name="password"
           />
           <Button type="submit" onClick={props.handleSubmit}>
-            {/* {" "} */}
-            {/* something weird about the onClick here, error about requiring a string */}
             Login
           </Button>
         </Segment>

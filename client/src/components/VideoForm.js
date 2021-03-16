@@ -21,21 +21,19 @@ function VideoForm() {
     switch (video.category) {
       case "JS":
         return jsAvatar;
-        break;
-      case "React":
+      case "REACT":
         return reactAvatar;
-        break;
       case "CSS":
         return cssAvatar;
-        break;
       case "HTML":
         return htmlAvatar;
-        break;
+      default:
+        return;
     }
   }
   return (
     <>
-      <Container>
+      <Container className="videoSelection">
         {user.videos.length > 0 ? (
           <>
             <h3>Your Watch List</h3>

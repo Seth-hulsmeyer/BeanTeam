@@ -21,12 +21,11 @@ function SignUp() {
   });
 
   const [passwordStrength, setPasswordStrength] = useState("");
-  // const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formObject);
-    // if JS, formObject.concat javascript array
+    // console.log(formObject);
+
     if (formObject.JS) {
       formObject.videos = formObject.videos.concat(Videos.JsVideoArray);
     }
@@ -41,7 +40,7 @@ function SignUp() {
     }
     API.createUser(formObject)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.statusText === "OK") {
           history.push("/login");
         }
@@ -77,7 +76,6 @@ function SignUp() {
         setPasswordStrength(res.data.strength);
       });
     }
-
     // console.log(formObject);
   };
   return (

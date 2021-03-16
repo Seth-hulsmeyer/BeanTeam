@@ -4,8 +4,6 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 const { passwordStrength } = require("check-password-strength");
 
 module.exports = (app) => {
-  // APP.GET to view a route won't work, res.render is a handlebar functionality
-
   //Post to verify user is in user table
   // api/ for us to know it's private from the user. They do not see this route
   app.post("/api/login", (req, res, next) => {
@@ -38,7 +36,6 @@ module.exports = (app) => {
       videos: req.body.videos,
     })
       .then((data) => {
-        // return res.redirect("/api/login");
         res.status(200).json(data);
       })
       .catch((err) => {
@@ -81,7 +78,6 @@ module.exports = (app) => {
     db.BeanUser.findByIdAndUpdate(
       req.user._id,
       {
-        // $set: { topics: req.body.topics  },
         $push: { videos: req.body.videos },
       },
       { new: true }
@@ -100,8 +96,8 @@ module.exports = (app) => {
       req.user._id,
       {
         $pull: {
-          'videos': { category: req.body.topic },
-        }
+          videos: { category: req.body.topic },
+        },
       },
       { new: true }
     )

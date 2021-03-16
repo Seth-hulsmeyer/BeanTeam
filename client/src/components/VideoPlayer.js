@@ -4,7 +4,8 @@ import React, { useContext } from "react";
 import { useParams } from "react-router";
 import YouTube from "react-youtube";
 import UserContext from "../utils/UserContext";
-import { Container, Card } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
+import defaultVideo from "../utils/Videos";
 
 function VideoPlayer() {
   const { user } = useContext(UserContext);
@@ -26,25 +27,45 @@ function VideoPlayer() {
     event.target.pauseVideo();
   };
 
-  // if (filterVideos.length === 0) {
-  //   return null;
-  // }
+  if (user.videos.length === 0) {
+    return (
+      <Container>
+        <YouTube
+          videoId={defaultVideo.meme[0].videoUrl}
+          opts={opts}
+          autoplay={1}
+          className="memeVideo"
+        />
+        <h2 className="blinky">
+          {user.first_name} {user.last_name} please choose a category from the
+          previous page
+        </h2>
+      </Container>
+    );
+  }
 
   return (
     <Container>
-      <Card.Group itemsPerRow={1} className="playVideo">
-        {id ? (
-          filterVideos.map((video) => (
-            <YouTube videoId={video.videoUrl} opts={opts} onReady={onReady} />
-          ))
-        ) : (
+      <h2 className="greeting">
+        Hello {user.first_name} {user.last_name}!
+      </h2>
+      {id ? (
+        filterVideos.map((video) => (
           <YouTube
-            videoId={user.videos[0].videoUrl}
+            videoId={video.videoUrl}
             opts={opts}
             onReady={onReady}
+            key={video._id}
+            className="playVideo"
           />
-        )}
-      </Card.Group>
+        ))
+      ) : (
+        <YouTube
+          videoId={user.videos[0].videoUrl}
+          opts={opts}
+          onReady={onReady}
+        />
+      )}
     </Container>
   );
 }
