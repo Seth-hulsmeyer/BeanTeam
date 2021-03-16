@@ -42,6 +42,7 @@ module.exports = (app) => {
         res.status(200).json(data);
       })
       .catch((err) => {
+        throw err;
         //If failure renders signup page with error message
         // res.render("signup", { error: "Unable to sign up, try again" });
       });
@@ -77,12 +78,30 @@ module.exports = (app) => {
   });
 
   app.put("/api/add-video", (req, res) => {
-    console.log(req.body.videos);
     db.BeanUser.findByIdAndUpdate(
       req.user._id,
       {
         // $set: { topics: req.body.topics  },
         $push: { videos: req.body.videos },
+      },
+      { new: true }
+    )
+      .then((data) => {
+        res.json(data);
+      })
+      .catch((err) => {
+        // Internal server error
+        res.status(500).send(err);
+      });
+  });
+
+  app.put("/api/remove-topic", (req, res) => {
+    db.BeanUser.findByIdAndUpdate(
+      req.user._id,
+      {
+        $pull: {
+          'videos': { category: req.body.topic },
+        }
       },
       { new: true }
     )

@@ -82,31 +82,31 @@ const JsVideoArray = [
 // React - Acade-mind Media
 const ReactVideoArray = [
   {
-    category: "React",
+    category: "REACT",
     title: "What is React?",
     videoUrl: "JPT3bFIwJYA",
   },
 
   {
-    category: "React",
+    category: "REACT",
     title: "Set up Workspace with Webpack",
     videoUrl: "uextYhQGP6k",
   },
 
   {
-    category: "React",
+    category: "REACT",
     title: "Set up Git",
     videoUrl: "LEu7FxUUr90",
   },
 
   {
-    category: "React",
+    category: "REACT",
     title: "First Component",
     videoUrl: "G40iHC-h0c0",
   },
 
   {
-    category: "React",
+    category: "REACT",
     title: "Multiple Components",
     videoUrl: "9wK4gHoOh1g",
   },

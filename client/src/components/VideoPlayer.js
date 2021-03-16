@@ -7,7 +7,7 @@ import UserContext from "../utils/UserContext";
 import { Container, Card } from "semantic-ui-react";
 
 function VideoPlayer() {
-  const user = useContext(UserContext);
+  const {user} = useContext(UserContext);
   const { id } = useParams();
 
   const opts = {
@@ -21,10 +21,14 @@ function VideoPlayer() {
   const filterVideos = user.videos.filter((video) => {
     return video._id === id;
   });
-  console.log(id);
-  const onReady = (event) =>
+  const onReady = (event) => {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
+  }
+
+  // if (filterVideos.length === 0) {
+  //   return null;
+  // }
 
   return (
     <Container>
