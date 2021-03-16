@@ -4,7 +4,7 @@ import NavBar from "../components/Header";
 import VideoButton from "../components/VideoButton";
 import VideoForm from "../components/VideoForm";
 import UserContext from "../utils/UserContext";
-import API from "../utils/API";
+// import API from "../utils/API";
 import Videos from "../utils/Videos";
 import { useHistory } from "react-router-dom";
 
@@ -14,29 +14,29 @@ function Main() {
     return (user?.videos ?? []).map((item) => item.category);
   }, [user]);
   const [JS, SetJS] = useState(() => {
-    return userVideoCategories.includes('JS');
+    return userVideoCategories.includes("JS");
   });
   const [CSS, SetCSS] = useState(() => {
-    return userVideoCategories.includes('CSS');
+    return userVideoCategories.includes("CSS");
   });
   const [REACT, SetREACT] = useState(() => {
-    return userVideoCategories.includes('REACT');
+    return userVideoCategories.includes("REACT");
   });
   const [HTML, SetHTML] = useState(() => {
-    return userVideoCategories.includes('HTML');
+    return userVideoCategories.includes("HTML");
   });
   const JStoggleEl = useRef();
   const CSStoggleEl = useRef();
   const REACTtoggleEl = useRef();
   const HTMLtoggleEl = useRef();
 
-  const [topicsData, setData] = useState({
-    JS: false,
-    HTML: false,
-    CSS: false,
-    React: false,
-    videos: [],
-  });
+  // const [topicsData, setData] = useState({
+  //   JS: false,
+  //   HTML: false,
+  //   CSS: false,
+  //   React: false,
+  //   videos: [],
+  // });
 
   const history = useHistory();
 
@@ -53,7 +53,6 @@ function Main() {
   return (
     <>
       <NavBar />
-      <br></br>
       <Container>
         <VideoButton
           jsSetter={(value) => {
@@ -61,7 +60,7 @@ function Main() {
             if (!userVideoCategories.includes("JS")) {
               addVideo(Videos.JsVideoArray);
             } else {
-              removeTopic('JS');
+              removeTopic("JS");
             }
           }}
           jsState={JS}
@@ -71,7 +70,7 @@ function Main() {
             if (!userVideoCategories.includes("CSS")) {
               addVideo(Videos.cssVideoArray);
             } else {
-              removeTopic('CSS');
+              removeTopic("CSS");
             }
           }}
           CSSState={CSS}
@@ -81,7 +80,7 @@ function Main() {
             if (!userVideoCategories.includes("REACT")) {
               addVideo(Videos.ReactVideoArray);
             } else {
-              removeTopic('REACT');
+              removeTopic("REACT");
             }
           }}
           REACTState={REACT}
@@ -91,7 +90,7 @@ function Main() {
             if (!userVideoCategories.includes("HTML")) {
               addVideo(Videos.htmlVideoArray);
             } else {
-              removeTopic('HTML');
+              removeTopic("HTML");
             }
           }}
           HTMLState={HTML}

@@ -7,7 +7,7 @@ import UserContext from "../utils/UserContext";
 import { Container, Card } from "semantic-ui-react";
 
 function VideoPlayer() {
-  const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const { id } = useParams();
 
   const opts = {
@@ -24,7 +24,7 @@ function VideoPlayer() {
   const onReady = (event) => {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
-  }
+  };
 
   // if (filterVideos.length === 0) {
   //   return null;
@@ -32,7 +32,7 @@ function VideoPlayer() {
 
   return (
     <Container>
-      <Card.Group itemsPerRow={1}>
+      <Card.Group itemsPerRow={1} className="playVideo">
         {id ? (
           filterVideos.map((video) => (
             <YouTube videoId={video.videoUrl} opts={opts} onReady={onReady} />

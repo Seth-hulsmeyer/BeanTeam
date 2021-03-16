@@ -4,7 +4,6 @@ import SignUpForm from "../components/SignUpForm";
 import API from "../utils/API";
 import Videos from "../utils/Videos";
 
-
 function SignUp() {
   // forcing a url change 2/8/25
   const history = useHistory();
@@ -21,7 +20,7 @@ function SignUp() {
     CSS: false,
   });
 
-  const [passwordStrength, setPasswordStrength] = useState("")
+  const [passwordStrength, setPasswordStrength] = useState("");
   // const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
@@ -73,15 +72,11 @@ function SignUp() {
       [name]: value,
     });
 
-    
-      if (name === "password") {
-        API.getPasswordStrength(value)
-          .then((res) => {
-            setPasswordStrength(res.data.strength)
-          })
-      }
-      
-    
+    if (name === "password") {
+      API.getPasswordStrength(value).then((res) => {
+        setPasswordStrength(res.data.strength);
+      });
+    }
 
     // console.log(formObject);
   };
@@ -93,8 +88,6 @@ function SignUp() {
         handleToggle={handleToggle}
         formObject={formObject}
         passwordStrength={passwordStrength}
-        
-        
       />
     </>
   );

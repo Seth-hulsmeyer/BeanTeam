@@ -13,7 +13,13 @@ const LoginForm = (props) => (
             // size="large"
             alt="logo"
             // src={FYBlogo}
-            style={{ height: 200, width: '100%', marginBottom: 20 }}
+            style={{
+              height: 200,
+              width: "auto",
+              marginBottom: 20,
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
           />
           <Form.Input
             label="Email"

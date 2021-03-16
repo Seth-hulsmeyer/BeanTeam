@@ -3,17 +3,36 @@
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import UserContext from "../utils/UserContext";
-import { List, Container } from "semantic-ui-react";
+import { Image, List, Container } from "semantic-ui-react";
+import jsAvatar from "../images/32px-Javascript-icon.png";
+import reactAvatar from "../images/32px-React-icon.png";
+import cssAvatar from "../images/32px-CSS3-icon.png";
+import htmlAvatar from "../images/32px-HTML5-icon.png";
 
 function VideoForm() {
   const location = useLocation();
-  const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   // console.log(user);
   if (!user) {
     return null;
   }
   // If the page uses user, the above code needs to be added
-
+  function vidIcon(video) {
+    switch (video.category) {
+      case "JS":
+        return jsAvatar;
+        break;
+      case "React":
+        return reactAvatar;
+        break;
+      case "CSS":
+        return cssAvatar;
+        break;
+      case "HTML":
+        return htmlAvatar;
+        break;
+    }
+  }
   return (
     <>
       <Container>
@@ -22,7 +41,8 @@ function VideoForm() {
             <h3>Your Watch List</h3>
             <List selection verticalAlign="middle">
               {user.videos.map((video) => (
-                <List.Item key={video.id}>
+                <List.Item key={video._id}>
+                  <Image src={vidIcon(video)} className="iconSmall" />
                   <Link
                     to={`/Videos/${video._id}`}
                     className={
@@ -35,9 +55,9 @@ function VideoForm() {
                   </Link>
                 </List.Item>
               ))}
-            </List>  
+            </List>
           </>
-        ) : null }
+        ) : null}
       </Container>
     </>
   );
