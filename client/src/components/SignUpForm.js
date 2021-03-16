@@ -12,7 +12,13 @@ import FYB_finals2 from "../images/FYB_finals2.png";
 
 const SignUpForm = (props) => (
   <>
-    <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
+    <Grid
+      textAlign="center"
+      style={{
+        height: "100vh",
+      }}
+      verticalAlign="middle"
+    >
       <Grid.Column style={{ maxWidth: 450 }}>
         <Form size="small" onSubmit={props.handleSubmit}>
           <Segment stacked>
@@ -59,7 +65,7 @@ const SignUpForm = (props) => (
               onChange={props.handleInputChange}
               placeholder="Password"
             />
-            <p>Your Password is: {props.passwordStrength}&nbsp;</p>
+            <p>YOUR PASSWORD IS: {props.passwordStrength}&nbsp;</p>
 
             <Grid.Row>
               <Grid.Column>

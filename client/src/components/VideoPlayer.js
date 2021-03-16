@@ -56,7 +56,6 @@ function VideoPlayer() {
             opts={opts}
             onReady={onReady}
             key={video._id}
-            className="playVideo"
           />
         ))
       ) : (

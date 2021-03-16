@@ -33,6 +33,11 @@
   animation: blinkingText 1.5s infinite;
   margin-bottom: 15px;
 }
+
+.playVideo {
+ float: right;
+}
+
 @keyframes blinkingText {
   0% {
     color: #000;
