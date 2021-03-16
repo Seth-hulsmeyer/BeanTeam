@@ -4,7 +4,6 @@ import Main from "./pages/Main";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import VideoDisplay from "./pages/VideoDisplay";
-import "./App.css";
 import API from "./utils/API";
 import UserContext from "./utils/UserContext";
 // import { set } from "mongoose";
@@ -20,12 +19,11 @@ function App() {
         setIsFetchingUser(false);
         console.log(res.data);
       })
-      
+
       .catch((err) => {
         console.log(err);
         setIsFetchingUser(false);
       });
-      
   }, []);
 
   return (

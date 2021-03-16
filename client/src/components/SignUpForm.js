@@ -12,9 +12,16 @@ import FYB_finals2 from "../images/FYB_finals2.png";
 
 const SignUpForm = (props) => (
   <>
-    <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
+    <Grid
+      textAlign="center"
+      style={{
+        height: "99vh",
+        marginTop: "1%",
+      }}
+      verticalAlign="middle"
+    >
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Form size="large" onSubmit={props.handleSubmit}>
+        <Form size="small" onSubmit={props.handleSubmit}>
           <Segment stacked>
             <Image
               src={FYB_finals2}
@@ -22,7 +29,12 @@ const SignUpForm = (props) => (
               // size="large"
               alt="logo"
               // src={FYBlogo}
-              style={{ height: "30vw", width: "90vw", marginbottom: "-25vw" }}
+              style={{
+                height: "auto",
+                width: "95vw",
+                margin: "-15%",
+                marginLeft: "1%",
+              }}
             />
             <Form.Input
               label="First Name"
@@ -61,7 +73,7 @@ const SignUpForm = (props) => (
             <Grid.Row>
               <Grid.Column>
                 <Checkbox
-                  style={{ margin: "2vw" }}
+                  style={{ margin: "2%", marginRight: "15%" }}
                   toggle
                   label="JS"
                   name="videos"
@@ -84,7 +96,7 @@ const SignUpForm = (props) => (
             <Grid.Row>
               <Grid.Column>
                 <Checkbox
-                  style={{ margin: "2vw" }}
+                  style={{ margin: "2%", marginRight: "10%" }}
                   toggle
                   label="HTML"
                   name="videos"
