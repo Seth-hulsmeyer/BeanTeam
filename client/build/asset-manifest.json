@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1e51dcb2.chunk.css",
+    "main.js": "/static/js/main.1c144024.chunk.js",
+    "main.js.map": "/static/js/main.1c144024.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.992eac29.js",
+    "runtime-main.js.map": "/static/js/runtime-main.992eac29.js.map",
+    "static/css/2.bba25a77.chunk.css": "/static/css/2.bba25a77.chunk.css",
+    "static/js/2.0c043408.chunk.js": "/static/js/2.0c043408.chunk.js",
+    "static/js/2.0c043408.chunk.js.map": "/static/js/2.0c043408.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c97abd67c5f3a2eff65aada3d9bc636a.js": "/precache-manifest.c97abd67c5f3a2eff65aada3d9bc636a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.bba25a77.chunk.css.map": "/static/css/2.bba25a77.chunk.css.map",
+    "static/css/main.1e51dcb2.chunk.css.map": "/static/css/main.1e51dcb2.chunk.css.map",
+    "static/js/2.0c043408.chunk.js.LICENSE.txt": "/static/js/2.0c043408.chunk.js.LICENSE.txt",
+    "static/media/512px-CSS3-icon.png": "/static/media/512px-CSS3-icon.8308977e.png",
+    "static/media/512px-HTML5-icon.png": "/static/media/512px-HTML5-icon.9fe85eb6.png",
+    "static/media/512px-Javascript-icon.png": "/static/media/512px-Javascript-icon.dd6c739e.png",
+    "static/media/512px-React-icon.png": "/static/media/512px-React-icon.f86cf518.png",
+    "static/media/FYB_Logo.png": "/static/media/FYB_Logo.ca1d91a1.png",
+    "static/media/FYB_finals2.png": "/static/media/FYB_finals2.0cc1fbda.png",
+    "static/media/FYB_finals5.png": "/static/media/FYB_finals5.068ec0e9.png",
+    "static/media/semantic.min.css": "/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.992eac29.js",
+    "static/css/2.bba25a77.chunk.css",
+    "static/js/2.0c043408.chunk.js",
+    "static/css/main.1e51dcb2.chunk.css",
+    "static/js/main.1c144024.chunk.js"
+  ]
+}

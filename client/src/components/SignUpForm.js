@@ -10,22 +10,27 @@ import {
 } from "semantic-ui-react";
 import FYB_finals2 from "../images/FYB_finals2.png";
 
+//SIGNUP PAGE
 const SignUpForm = (props) => (
   <>
-    <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
+    <Grid
+      textAlign="center"
+      style={{
+        height: "99vh",
+        marginTop: "1%",
+      }}
+      verticalAlign="middle"
+    >
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Form size="large" onSubmit={props.handleSubmit}>
+        <Form size="small" onSubmit={props.handleSubmit}>
           <Segment stacked>
             <Image
               src={FYB_finals2}
               className="fyblue"
-              // size="large"
               alt="logo"
-              // src={FYBlogo}
               style={{
-                height: 200,
-                width: "auto",
-                marginBottom: 20,
+                height: "auto",
+                width: "100%",
                 marginLeft: "auto",
                 marginRight: "auto",
               }}
@@ -62,12 +67,17 @@ const SignUpForm = (props) => (
               onChange={props.handleInputChange}
               placeholder="Password"
             />
-            <p>Your Password is: {props.passwordStrength}&nbsp;</p>
+            {props.passwordStrength.length > 0 &&
+            props.formObject.password.length > 0 ? (
+              <>
+                <p>Your Password is: {props.passwordStrength}&nbsp;</p>
+              </>
+            ) : null}
 
             <Grid.Row>
               <Grid.Column>
                 <Checkbox
-                  style={{ margin: "2vw" }}
+                  style={{ margin: "2%", marginRight: "15%" }}
                   toggle
                   label="JS"
                   name="videos"
@@ -90,7 +100,7 @@ const SignUpForm = (props) => (
             <Grid.Row>
               <Grid.Column>
                 <Checkbox
-                  style={{ margin: "2vw" }}
+                  style={{ margin: "2%", marginRight: "10%" }}
                   toggle
                   label="HTML"
                   name="videos"
@@ -108,10 +118,8 @@ const SignUpForm = (props) => (
                     props.handleToggle("CSS", !props.formObject.CSS);
                   }}
                 />
-                <br></br>
               </Grid.Column>
             </Grid.Row>
-            <br></br>
             <Button type="submit" onClick={props.handleSubmit}>
               Submit
             </Button>

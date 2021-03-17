@@ -11,57 +11,47 @@ import UserContext from "./utils/UserContext";
 function App() {
   const [user, setUser] = useState();
   const [isFetchingUser, setIsFetchingUser] = useState(true);
-  
 
   useEffect(() => {
     API.getCurrentUser()
       .then((res) => {
         setUser(res.data);
         setIsFetchingUser(false);
-        console.log(res.data);
       })
-      
+
       .catch((err) => {
         console.log(err);
         setIsFetchingUser(false);
       });
-      
   }, []);
 
   const addVideo = useCallback((videos) => {
     API.addVideo({
       videos: videos,
-    })
-    .then((res) => {
-      setUser(res.data)
-    })
+    }).then((res) => {
+      setUser(res.data);
+    });
   }, []);
 
   const removeTopic = useCallback((topic) => {
     API.removeTopic({
       topic: topic,
-    })
-    .then((res) => {
-      setUser(res.data)
-    })
+    }).then((res) => {
+      setUser(res.data);
+    });
   }, []);
 
   const context = {
     user: user,
     addVideo: addVideo,
-    removeTopic: removeTopic
-  }
-
-
-  
+    removeTopic: removeTopic,
+  };
 
   return (
     <Router>
       <Switch>
-        {/* <UserContext.Provider value={user}> */}
         <Route exact path="/" component={SignUp} />
         <Route exact path="/login" component={Login} />
-        {/* </UserContext.Provider> */}
         <UserContext.Provider value={context}>
           {isFetchingUser ? null : (
             <Route exact path="/main" component={Main} />

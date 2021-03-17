@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/public"));
+  app.use(express.static("client/build"));
 }
 
 app.use(
@@ -23,7 +23,12 @@ app.use(passport.session());
 // Define API routes here
 routes(app);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bean_feeder");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bean_feeder", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 
 // Send every other request to the React app
 // Define any API routes before this runs

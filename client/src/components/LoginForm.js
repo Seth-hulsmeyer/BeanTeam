@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Form, Grid, Segment, Image } from "semantic-ui-react";
 import FYB_finals5 from "../images/FYB_finals5.png";
 
+//LOGIN PAGE
 const LoginForm = (props) => (
   <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
     <Grid.Column style={{ maxWidth: 450 }}>
@@ -10,12 +11,10 @@ const LoginForm = (props) => (
           <Image
             src={FYB_finals5}
             className="fyblue"
-            // size="large"
             alt="logo"
-            // src={FYBlogo}
             style={{
-              height: 200,
-              width: "auto",
+              height: "auto",
+              width: "100%",
               marginBottom: 20,
               marginLeft: "auto",
               marginRight: "auto",
@@ -34,8 +33,6 @@ const LoginForm = (props) => (
             name="password"
           />
           <Button type="submit" onClick={props.handleSubmit}>
-            {/* {" "} */}
-            {/* something weird about the onClick here, error about requiring a string */}
             Login
           </Button>
         </Segment>

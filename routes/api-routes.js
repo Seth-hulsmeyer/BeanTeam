@@ -4,24 +4,15 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 const { passwordStrength } = require("check-password-strength");
 
 module.exports = (app) => {
-  // APP.GET to view a route won't work, res.render is a handlebar functionality
-
   //Post to verify user is in user table
   // api/ for us to know it's private from the user. They do not see this route
-  app.post("/api/login", (req, res, next) => {
-    passport.authenticate("local", (err, user, info) => {
-      if (!user) res.redirect("/api/signup", { error: info.message });
-      else {
-        req.logIn(user, (err) => {
-          //If present returns to home page or displays errors
-          if (err) {
-            return next(err);
-          }
-          return res.redirect("/main");
-        });
-      }
-    })(req, res, next);
-  });
+  app.post(
+    "/api/login",
+    passport.authenticate("local", {
+      successRedirect: "/main",
+      failureRedirect: "/",
+    })
+  );
   //Post to signup that add user info to users table
   app.post("/api/signup", (req, res) => {
     db.BeanUser.create({
@@ -38,13 +29,10 @@ module.exports = (app) => {
       videos: req.body.videos,
     })
       .then((data) => {
-        // return res.redirect("/api/login");
         res.status(200).json(data);
       })
       .catch((err) => {
         throw err;
-        //If failure renders signup page with error message
-        // res.render("signup", { error: "Unable to sign up, try again" });
       });
   });
 
@@ -81,7 +69,6 @@ module.exports = (app) => {
     db.BeanUser.findByIdAndUpdate(
       req.user._id,
       {
-        // $set: { topics: req.body.topics  },
         $push: { videos: req.body.videos },
       },
       { new: true }
@@ -100,8 +87,8 @@ module.exports = (app) => {
       req.user._id,
       {
         $pull: {
-          'videos': { category: req.body.topic },
-        }
+          videos: { category: req.body.topic },
+        },
       },
       { new: true }
     )
