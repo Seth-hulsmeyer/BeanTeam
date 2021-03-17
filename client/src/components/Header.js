@@ -49,14 +49,12 @@ function NavBar() {
               method="post"
               as="form"
             >
-              <Link
-                to="/"
-                className={
-                  location.pathname === "/" ? "nav-link active" : "nav-link"
-                }
+              <button
+                type="submit"
+                className="nav-link navTextButton"
               >
                 Logout
-              </Link>
+              </button>
             </Menu.Item>
           </Menu>
         </Container>
