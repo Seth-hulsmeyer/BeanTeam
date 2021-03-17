@@ -85,12 +85,7 @@ function VideoButton(props) {
           </div>
         </Grid.Column>
         <Grid.Column mobile={16} tablet={8} computer={4} className="ui card">
-          <img
-            alt="html"
-            className="languageImage"
-            src={htmlLogo}
-            // style={{ width: "auto", height: "auto" }}
-          />
+          <img alt="html" className="languageImage" src={htmlLogo} />
           <div className="content">
             <h3>HTML</h3>
             <div className="meta">

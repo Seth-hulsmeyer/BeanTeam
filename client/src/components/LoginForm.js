@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Form, Grid, Segment, Image } from "semantic-ui-react";
 import FYB_finals5 from "../images/FYB_finals5.png";
 
+//LOGIN PAGE
 const LoginForm = (props) => (
   <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
     <Grid.Column style={{ maxWidth: 450 }}>

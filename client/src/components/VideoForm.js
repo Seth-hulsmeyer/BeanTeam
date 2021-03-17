@@ -12,7 +12,7 @@ import htmlAvatar from "../images/32px-HTML5-icon.png";
 function VideoForm() {
   const location = useLocation();
   const { user } = useContext(UserContext);
-  // console.log(user);
+
   if (!user) {
     return null;
   }
@@ -60,24 +60,6 @@ function VideoForm() {
                   </Table.Row>
                 ))}
               </Table.Body>
-
-              {/* <List selection verticalAlign="middle">
-                {user.videos.map((video) => (
-                  <List.Item key={video._id}>
-                    <Image src={vidIcon(video)} className="iconSmall" />
-                    <Link
-                      to={`/Videos/${video._id}`}
-                      className={
-                        location.pathname === "/videos"
-                          ? "nav-link active"
-                          : "nav-link"
-                      }
-                    >
-                      {video.title}
-                    </Link>
-                  </List.Item>
-                ))}
-              </List> */}
             </Table>
           </>
         ) : null}

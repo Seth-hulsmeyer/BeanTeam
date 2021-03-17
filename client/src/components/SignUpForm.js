@@ -10,6 +10,7 @@ import {
 } from "semantic-ui-react";
 import FYB_finals2 from "../images/FYB_finals2.png";
 
+//SIGNUP PAGE
 const SignUpForm = (props) => (
   <>
     <Grid
@@ -66,7 +67,11 @@ const SignUpForm = (props) => (
               onChange={props.handleInputChange}
               placeholder="Password"
             />
-            <p>YOUR PASSWORD IS: {props.passwordStrength}&nbsp;</p>
+            {props.passwordStrength.length > 0 ? (
+              <>
+                <p>Your Password is: {props.passwordStrength}&nbsp;</p>
+              </>
+            ) : null}
 
             <Grid.Row>
               <Grid.Column>

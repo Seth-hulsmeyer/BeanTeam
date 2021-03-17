@@ -5,7 +5,6 @@ import API from "../utils/API";
 import Videos from "../utils/Videos";
 
 function SignUp() {
-  // forcing a url change 2/8/25
   const history = useHistory();
 
   const [formObject, setFormObject] = useState({
@@ -24,7 +23,6 @@ function SignUp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(formObject);
 
     if (formObject.JS) {
       formObject.videos = formObject.videos.concat(Videos.JsVideoArray);
@@ -40,7 +38,6 @@ function SignUp() {
     }
     API.createUser(formObject)
       .then((res) => {
-        // console.log(res);
         if (res.statusText === "OK") {
           history.push("/login");
         }
@@ -52,14 +49,12 @@ function SignUp() {
 
   //Sign up toggle
   const handleToggle = (name, value) => {
-    // const { name, value } = event.target;
     // setting state
     setFormObject({
       ...formObject,
       // dynamically takes in "name" and that value
       [name]: value,
     });
-    // console.log(formObject);
   };
 
   const handleInputChange = (event) => {
@@ -76,7 +71,6 @@ function SignUp() {
         setPasswordStrength(res.data.strength);
       });
     }
-    // console.log(formObject);
   };
   return (
     <>
