@@ -13,7 +13,7 @@
     "server": "nodemon --ignore ./client/ ./server.js",
     "client": "npm run start --prefix ./client",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build",
     "seed": "node seed/seedDB.js"
   },
   "author": "",
