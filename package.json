@@ -4,7 +4,7 @@
   "description": "Mern Demo",
   "main": "server.js",
    "engines": {
-    "node": "14.x"
+    "node": "14.15.0"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -12,9 +12,9 @@
     "start:dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon --ignore ./client/ ./server.js",
     "client": "npm run start --prefix ./client",
+    "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build",
-    "seed": "node seed/seedDB.js"
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
