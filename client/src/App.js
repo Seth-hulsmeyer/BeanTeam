@@ -17,7 +17,6 @@ function App() {
       .then((res) => {
         setUser(res.data);
         setIsFetchingUser(false);
-        // console.log(res.data);
       })
 
       .catch((err) => {

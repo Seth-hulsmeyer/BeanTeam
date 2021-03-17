@@ -7,6 +7,7 @@ import UserContext from "../utils/UserContext";
 import Videos from "../utils/Videos";
 import { useHistory } from "react-router-dom";
 
+//USER's FIRST PAGE AFTER LOGIN
 function Main() {
   const { user, addVideo, removeTopic } = useContext(UserContext);
   const userVideoCategories = useMemo(() => {

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Container, Menu, Header, Image } from "semantic-ui-react";
 import FYB_Logo from "../images/FYB_Logo.png";
 
+//NAVBAR DISPLAY
 function NavBar() {
   const location = useLocation();
   return (
