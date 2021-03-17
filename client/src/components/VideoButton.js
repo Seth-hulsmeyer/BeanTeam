@@ -12,8 +12,11 @@ function VideoButton(props) {
   const { user } = useContext(UserContext);
   return (
     <Grid className="videoButtonCard" columns={4} style={{ margin: "2vw" }}>
-      <h1 className="greetingMain">
-        Hello {user.first_name} {user.last_name}!
+      <h1
+        className="greetingMain"
+        style={{ textTransform: "capitalize", fontWeight: "bold" }}
+      >
+        {user.first_name} {user.last_name}'s Dashboard
       </h1>
       <Grid.Row>
         <Grid.Column

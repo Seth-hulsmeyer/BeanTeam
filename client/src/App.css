@@ -56,3 +56,12 @@
     color: #000;
   }
 }
+
+.navTextButton {
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  color: #4183c4;
+  cursor: pointer;
+  outline: none;
+}
