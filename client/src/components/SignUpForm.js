@@ -67,7 +67,8 @@ const SignUpForm = (props) => (
               onChange={props.handleInputChange}
               placeholder="Password"
             />
-            {props.passwordStrength.length > 0 ? (
+            {props.passwordStrength.length > 0 &&
+            props.formObject.password.length > 0 ? (
               <>
                 <p>Your Password is: {props.passwordStrength}&nbsp;</p>
               </>
