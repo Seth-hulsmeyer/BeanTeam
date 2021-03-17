@@ -8,7 +8,7 @@ module.exports = (app) => {
   // api/ for us to know it's private from the user. They do not see this route
   app.post("/api/login", (req, res, next) => {
     passport.authenticate("local", (err, user, info) => {
-      if (!user) res.redirect("/api/signup", { error: info.message });
+      if (!user) res.redirect(`/login?error=${encodeURI(info.message)}`);
       else {
         req.logIn(user, (err) => {
           //If present returns to home page or displays errors

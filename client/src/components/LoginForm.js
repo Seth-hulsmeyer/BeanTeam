@@ -32,6 +32,11 @@ const LoginForm = (props) => (
             placeholder="Password"
             name="password"
           />
+          {props.error && (
+            <p>
+              {props.error}
+            </p>
+          )}
           <Button type="submit" onClick={props.handleSubmit}>
             Login
           </Button>
