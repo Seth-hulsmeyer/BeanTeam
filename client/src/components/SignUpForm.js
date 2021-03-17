@@ -15,7 +15,8 @@ const SignUpForm = (props) => (
     <Grid
       textAlign="center"
       style={{
-        height: "100vh",
+        height: "99vh",
+        marginTop: "1%",
       }}
       verticalAlign="middle"
     >
@@ -27,8 +28,8 @@ const SignUpForm = (props) => (
               className="fyblue"
               alt="logo"
               style={{
-                height: "100%",
-                width: 500,
+                height: "auto",
+                width: "100%",
                 marginLeft: "auto",
                 marginRight: "auto",
               }}
@@ -70,7 +71,7 @@ const SignUpForm = (props) => (
             <Grid.Row>
               <Grid.Column>
                 <Checkbox
-                  style={{ margin: "2vw" }}
+                  style={{ margin: "2%", marginRight: "15%" }}
                   toggle
                   label="JS"
                   name="videos"
@@ -93,7 +94,7 @@ const SignUpForm = (props) => (
             <Grid.Row>
               <Grid.Column>
                 <Checkbox
-                  style={{ margin: "2vw" }}
+                  style={{ margin: "2%", marginRight: "10%" }}
                   toggle
                   label="HTML"
                   name="videos"

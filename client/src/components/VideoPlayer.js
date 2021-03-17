@@ -13,7 +13,7 @@ function VideoPlayer() {
 
   const opts = {
     height: "390",
-    width: "640",
+    width: "80%",
     playerVars: {
       autoplay: 1,
     },

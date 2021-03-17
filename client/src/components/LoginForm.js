@@ -12,8 +12,8 @@ const LoginForm = (props) => (
             className="fyblue"
             alt="logo"
             style={{
-              height: "100%",
-              width: 300,
+              height: "auto",
+              width: "100%",
               marginBottom: 20,
               marginLeft: "auto",
               marginRight: "auto",

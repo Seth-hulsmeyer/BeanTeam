@@ -23,6 +23,7 @@
 .videoSelection {
   margin-top: 15px;
   padding-bottom: 30px;
+  width: 80%;
 }
 
 .greeting {
@@ -35,7 +36,7 @@
 }
 
 .playVideo {
- float: right;
+  float: right;
 }
 
 @keyframes blinkingText {
