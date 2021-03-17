@@ -33,13 +33,13 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bean_feeder", {
 // Send every other request to the React app
 // Define any API routes before this runs
 if (process.env.NODE_ENV === "production") {
-  app.get((req, res) => {
+  app.all('*', function(req, res) {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
 } else {
-  app.get((req, res) => {
+  app.all('*', function(req, res) {
     res.sendFile(path.join(__dirname, "./client/public/index.html"));
-  });  
+  });
 }
 
 app.listen(PORT, () => {
