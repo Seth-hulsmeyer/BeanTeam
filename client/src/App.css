@@ -8,6 +8,10 @@
   padding-bottom: 5%;
 }
 
+.loginSwitch {
+  color: #000 !important;
+}
+
 @media only screen and (max-width: 760px) {
   .languageImage {
     width: 25%;

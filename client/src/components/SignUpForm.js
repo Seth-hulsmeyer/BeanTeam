@@ -123,7 +123,7 @@ const SignUpForm = (props) => (
             <Button type="submit" onClick={props.handleSubmit}>
               Submit
             </Button>
-            <p>
+            <p className="loginSwitch">
               Or log in <Link to="/login">here</Link>
             </p>
           </Segment>
