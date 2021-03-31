@@ -3,7 +3,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import UserContext from "../utils/UserContext";
-import { Image, List, Container, Table } from "semantic-ui-react";
+import { Image, Container, Table } from "semantic-ui-react";
 import jsAvatar from "../images/32px-Javascript-icon.png";
 import reactAvatar from "../images/32px-React-icon.png";
 import cssAvatar from "../images/32px-CSS3-icon.png";

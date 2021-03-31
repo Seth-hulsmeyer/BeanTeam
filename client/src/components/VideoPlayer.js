@@ -29,12 +29,20 @@ function VideoPlayer() {
 
   if (user.videos.length === 0) {
     return (
-      <Container>
+      <Container
+        className="YTVid"
+        style={{
+          position: "relative",
+        }}
+      >
         <YouTube
           videoId={defaultVideo.meme[0].videoUrl}
           opts={opts}
           autoplay={1}
           className="memeVideo"
+          style={{
+            position: "absolute",
+          }}
         />
         <h2 className="blinky">
           {user.first_name} {user.last_name} please choose a category from the
@@ -45,7 +53,12 @@ function VideoPlayer() {
   }
 
   return (
-    <Container>
+    <Container
+      className="YTVid"
+      style={{
+        position: "relative",
+      }}
+    >
       <h2 className="greeting">
         Hello {user.first_name} {user.last_name}!
       </h2>
@@ -56,6 +69,9 @@ function VideoPlayer() {
             opts={opts}
             onReady={onReady}
             key={video._id}
+            style={{
+              position: "absolute",
+            }}
           />
         ))
       ) : (

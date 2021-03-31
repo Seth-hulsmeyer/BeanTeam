@@ -8,6 +8,32 @@
   padding-bottom: 5%;
 }
 
+@media only screen and (max-width: 760px) {
+  .languageImage {
+    width: 25%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vw;
+    padding-bottom: 5%;
+  }
+
+  .videoButtonCard {
+    margin-top: 30% !important;
+  }
+
+  .YTVid {
+    margin-top: 30% !important;
+    padding-top: 80px !important;
+    width: 100%;
+  }
+
+  .navHeader {
+    height: 15px !important;
+  }
+}
+
 .iconSmall {
   margin-right: 15px !important;
 }
@@ -35,8 +61,10 @@
   margin-bottom: 15px;
 }
 
-.playVideo {
-  float: right;
+.YTVid {
+  align-items: center !important;
+  margin: auto;
+  width: 80%;
 }
 
 @keyframes blinkingText {

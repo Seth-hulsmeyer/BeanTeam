@@ -1,7 +1,7 @@
 // Main Page Video Button
 
 import React, { useContext } from "react";
-import { Grid, Checkbox, Divider } from "semantic-ui-react";
+import { Grid, Checkbox, Divider, Image } from "semantic-ui-react";
 import UserContext from "../utils/UserContext";
 import jsLogo from "../images/512px-Javascript-icon.png";
 import reactLogo from "../images/512px-React-icon.png";
@@ -25,7 +25,7 @@ function VideoButton(props) {
           computer={4}
           className="ui card vbCard"
         >
-          <img alt="js" src={jsLogo} className="languageImage" />
+          <Image alt="js" src={jsLogo} className="languageImage" />
           <div className="content">
             <h3>JavaScript (1995)</h3>
             <div className="meta">
@@ -46,7 +46,7 @@ function VideoButton(props) {
           </div>
         </Grid.Column>
         <Grid.Column mobile={16} tablet={8} computer={4} className="ui card">
-          <img alt="react" src={reactLogo} className="languageImage" />
+          <Image alt="react" src={reactLogo} className="languageImage" />
           <div className="content">
             <h3>REACT</h3>
             <div className="meta">
@@ -67,7 +67,7 @@ function VideoButton(props) {
           </div>
         </Grid.Column>
         <Grid.Column mobile={16} tablet={8} computer={4} className="ui card">
-          <img alt="css" className="languageImage" src={cssLogo} />
+          <Image alt="css" className="languageImage" src={cssLogo} />
           <div className="content">
             <h3>CSS</h3>
             <div className="meta">
@@ -88,7 +88,7 @@ function VideoButton(props) {
           </div>
         </Grid.Column>
         <Grid.Column mobile={16} tablet={8} computer={4} className="ui card">
-          <img alt="html" className="languageImage" src={htmlLogo} />
+          <Image alt="html" className="languageImage" src={htmlLogo} />
           <div className="content">
             <h3>HTML</h3>
             <div className="meta">

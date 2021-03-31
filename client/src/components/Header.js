@@ -49,10 +49,7 @@ function NavBar() {
               method="post"
               as="form"
             >
-              <button
-                type="submit"
-                className="nav-link navTextButton"
-              >
+              <button type="submit" className="nav-link navTextButton">
                 Logout
               </button>
             </Menu.Item>
