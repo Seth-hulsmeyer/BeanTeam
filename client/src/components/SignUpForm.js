@@ -70,7 +70,9 @@ const SignUpForm = (props) => (
             {props.passwordStrength.length > 0 &&
             props.formObject.password.length > 0 ? (
               <>
-                <p>Your Password is: {props.passwordStrength}&nbsp;</p>
+                <p className="signupText">
+                  Your Password is: {props.passwordStrength}&nbsp;
+                </p>
               </>
             ) : null}
 
@@ -123,7 +125,7 @@ const SignUpForm = (props) => (
             <Button type="submit" onClick={props.handleSubmit}>
               Submit
             </Button>
-            <p className="loginSwitch">
+            <p className="signupText">
               Or log in <Link to="/login">here</Link>
             </p>
           </Segment>
